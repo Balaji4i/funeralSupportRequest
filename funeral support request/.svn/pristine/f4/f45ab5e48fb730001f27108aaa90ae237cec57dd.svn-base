@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ro.HMOApprovalCount_ROVO
+
+package model.ro
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="B_pid")
+def B_pid_VariableScript_Variable()
+{
+adf.context.sessionScope.personId
+}
+

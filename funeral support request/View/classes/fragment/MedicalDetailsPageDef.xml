@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="MedicalDetailsPageDef"
+                Package="fragment">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HMOMaintance_VO" RangeSize="25" DataControl="Oando_AMDataControl" id="HMOMaintance_VOIterator" ChangeEventPolicy="none"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="ApprovalStatus">
+      <AttrNames>
+        <Item Value="ApprovalStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="CreationDate">
+      <AttrNames>
+        <Item Value="CreationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="HmoOption">
+      <AttrNames>
+        <Item Value="HmoOption"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="HmoTransReference">
+      <AttrNames>
+        <Item Value="HmoTransReference"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="Hospital">
+      <AttrNames>
+        <Item Value="Hospital"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="MaintanceNo">
+      <AttrNames>
+        <Item Value="MaintanceNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="PersonNumber">
+      <AttrNames>
+        <Item Value="PersonNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="ReasonForChange">
+      <AttrNames>
+        <Item Value="ReasonForChange"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="RequestType">
+      <AttrNames>
+        <Item Value="RequestType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="ApproverComments">
+      <AttrNames>
+        <Item Value="ApproverComments"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOMaintance_VOIterator" id="StateOfResidence">
+      <AttrNames>
+        <Item Value="StateOfResidence"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="Oando_AMDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="ReimbursementClaimPageDef"
+                Package="fragment">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HMOReimbursement_VO" RangeSize="25" DataControl="Oando_AMDataControl" ChangeEventPolicy="none"
+              id="HMOReimbursement_VOIterator"/>
+    <iterator Binds="XxfndAttachment_EOView" RangeSize="25" DataControl="Oando_AMDataControl" ChangeEventPolicy="none"
+              id="XxfndAttachment_EOViewIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="ApprovalStatus">
+      <AttrNames>
+        <Item Value="ApprovalStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="ApproverComments">
+      <AttrNames>
+        <Item Value="ApproverComments"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="BankAccountName">
+      <AttrNames>
+        <Item Value="BankAccountName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="CreationDate">
+      <AttrNames>
+        <Item Value="CreationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="DateOfVisit">
+      <AttrNames>
+        <Item Value="DateOfVisit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="Emergency">
+      <AttrNames>
+        <Item Value="Emergency"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="EnrolleeBank">
+      <AttrNames>
+        <Item Value="EnrolleeBank"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="HmoOption">
+      <AttrNames>
+        <Item Value="HmoOption"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="HmoProvider">
+      <AttrNames>
+        <Item Value="HmoProvider"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="HmoTransReference">
+      <AttrNames>
+        <Item Value="HmoTransReference"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="HmoTransYear">
+      <AttrNames>
+        <Item Value="HmoTransYear"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="Hospital">
+      <AttrNames>
+        <Item Value="Hospital"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="HospitalNameUsed">
+      <AttrNames>
+        <Item Value="HospitalNameUsed"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="MobileNo">
+      <AttrNames>
+        <Item Value="MobileNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="PersonNumber">
+      <AttrNames>
+        <Item Value="PersonNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="PolicyHolderName">
+      <AttrNames>
+        <Item Value="PolicyHolderName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="ReasonForReimbursement">
+      <AttrNames>
+        <Item Value="ReasonForReimbursement"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="ReimbursementReqNo">
+      <AttrNames>
+        <Item Value="ReimbursementReqNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="RequestType">
+      <AttrNames>
+        <Item Value="RequestType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="StateOfResidence">
+      <AttrNames>
+        <Item Value="StateOfResidence"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="XxfndAttachment_EOViewIterator" id="XxfndAttachment_EOView">
+      <nodeDefinition DefName="model.vo.XxfndAttachment_EOView" Name="XxfndAttachment_EOView0">
+        <AttrNames>
+          <Item Value="AttachmentName"/>
+          <Item Value="AttachmentType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="ReimbursementId">
+      <AttrNames>
+        <Item Value="ReimbursementId"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="Oando_AMDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <attributeValues IterBinding="HMOReimbursement_VOIterator" id="EnrolleeBankAccount">
+      <AttrNames>
+        <Item Value="EnrolleeBankAccount"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

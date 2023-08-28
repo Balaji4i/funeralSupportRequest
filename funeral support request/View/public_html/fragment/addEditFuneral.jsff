@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+    <af:pageTemplate viewId="/oracle/apps/uikit/common/pageTemplates/MainPageTemplate.jspx" id="pt1">
+        <f:facet name="pageContents">
+            <af:panelGroupLayout id="pgl1"  >
+                <af:outputText value="Funeral Request Form" id="ot11"    inlineStyle="font-size:20px; font-weight: bold;"/>
+                <af:panelBox  id="pb1" showDisclosure="false" styleClass="shadowBorder"
+                         inlineStyle="height:700px;font-size:larger; font-weight: bold;"
+                        >
+                      <f:facet name="toolbar">
+                        <af:toolbar id="t1">
+                          <af:button text="Save And Close" id="b1"
+                          
+                          disabled="#{bindings.ApprovalStatus.inputValue eq 'DRAFT' ? false : true}"
+                                     action="#{backingBeanScope.addEditFuneral.onSaveAction}"/>
+                            <af:button text="Submit" id="b2"
+                            disabled="#{bindings.ApprovalStatus.inputValue ne 'DRAFT' 
+                            or bindings.XxfndAttachment_EOView2.estimatedRowCount eq 0 ? true : false}"
+                            action="#{backingBeanScope.addEditFuneral.onClickSubmit}"/>
+                            <af:button text="Close" id="b3" styleClass="red-cancel" immediate="true"
+                                    action="#{backingBeanScope.addEditFuneral.onCancelAction}"/>
+                        </af:toolbar>
+                    </f:facet>
+                    <af:spacer width="10" height="20" id="s4"/>
+                    <af:panelGroupLayout id="pgl3" layout="vertical" >
+                      <af:panelGridLayout id="pgl7" inlineStyle="background:#e0e0e0;">
+                                    <af:gridRow marginTop="5px" height="auto" id="gr6">
+                                        <af:gridCell marginStart="5px" width="33%" id="gc3" halign="center">
+                                            <af:outputText value="Request No" id="ot6"
+                                                           inlineStyle="font-size:larger; font-weight: bold;"/>
+                                        </af:gridCell>
+                                        <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc4"
+                                                     halign="center">
+                                            <af:outputText value="Request Date" id="ot7"
+                                                           inlineStyle="font-size:larger; font-weight: bold;"/>
+                                        </af:gridCell>
+                                        <af:gridCell marginStart="5px" width="34%" marginEnd="5px" id="gc22"
+                                                     halign="center">
+                                            <af:outputText value="Request Status" id="ot10"
+                                                           inlineStyle="font-size:larger; font-weight: bold;"/>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                                        <af:gridCell marginStart="5px" width="33%" id="gc5" halign="center">
+                                    
+                                    <af:outputText value="#{bindings.FuneralReqNo.inputValue}"
+                                                   shortDesc="#{bindings.FuneralReqNo.hints.tooltip}" id="it1"/>
+                                </af:gridCell>
+                                        <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc7"
+                                                     halign="center">
+                                   
+                                        <af:outputText value="#{bindings.RequestDate.inputValue}"
+                                                   shortDesc="#{bindings.RequestDate.hints.tooltip}" id="it11">
+                                                     <af:convertDateTime pattern="dd-MMM-yy"/>
+                                                     </af:outputText>
+                                        </af:gridCell>
+                                        <af:gridCell marginStart="5px" width="34%" marginEnd="5px" id="gc23"   halign="center">
+                                   
+                                    <af:outputText value="#{bindings.ApprovalStatus.inputValue}"
+                                                   shortDesc="#{bindings.ApprovalStatus.hints.tooltip}" id="ot14"/>
+                                </af:gridCell>
+                                    </af:gridRow>
+                                </af:panelGridLayout>
+                    </af:panelGroupLayout>
+                    <af:panelFormLayout id="pfl1" maxColumns="3" rows="1" labelWidth="250" rendered="false">
+                        <af:inputText value="#{bindings.RequestType.inputValue}" simple="true"
+                                      required="#{bindings.RequestType.hints.mandatory}"  visible="false"
+                                      columns="#{bindings.RequestType.hints.displayWidth}"
+                                      maximumLength="#{bindings.RequestType.hints.precision}"
+                                      shortDesc="#{bindings.RequestType.hints.tooltip}" id="it12">
+                            <f:validator binding="#{bindings.RequestType.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.ApprovalStatus.inputValue}" simple="true"
+                                      required="#{bindings.ApprovalStatus.hints.mandatory}" visible="false"
+                                      columns="#{bindings.ApprovalStatus.hints.displayWidth}"
+                                      maximumLength="#{bindings.ApprovalStatus.hints.precision}"
+                                      shortDesc="#{bindings.ApprovalStatus.hints.tooltip}" id="it2">
+                            <f:validator binding="#{bindings.ApprovalStatus.validator}"/>
+                        </af:inputText>
+                    </af:panelFormLayout>
+                    
+                    <af:spacer width="10" height="10" id="s3"/>
+                                       
+                        <af:panelFormLayout id="pfl2" maxColumns="2" rows="8" labelWidth="250">
+                     
+                        <af:inputText value="#{bindings.PersonNumber.inputValue}"
+                                          label="Employee No" contentStyle="text-align:left;width:300px"
+                                          required="#{bindings.PersonNumber.hints.mandatory}" disabled="true"
+                                          columns="#{bindings.PersonNumber.hints.displayWidth}"
+                                          maximumLength="#{bindings.PersonNumber.hints.precision}"
+                                          shortDesc="#{bindings.PersonNumber.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.PersonNumber.validator}"/>
+                               
+                            </af:inputText>
+                            
+                            <af:inputText value="#{bindings.Title.inputValue}" label="#{bindings.Title.hints.label}"
+                                          required="#{bindings.Title.hints.mandatory}" disabled="true"
+                                          columns="#{bindings.Title.hints.displayWidth}" contentStyle="width:300px"
+                                          maximumLength="#{bindings.Title.hints.precision}"
+                                          shortDesc="#{bindings.Title.hints.tooltip}" id="it4">
+                                <f:validator binding="#{bindings.Title.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.FullName.inputValue}" disabled="true"
+                                          label="Employee Name" contentStyle="width:300px"
+                                          required="#{bindings.FullName.hints.mandatory}"
+                                          columns="#{bindings.FullName.hints.displayWidth}"
+                                          maximumLength="#{bindings.FullName.hints.precision}"
+                                          shortDesc="#{bindings.FullName.hints.tooltip}" id="it5">
+                                <f:validator binding="#{bindings.FullName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.DepartmentName.inputValue}" contentStyle="width:300px"
+                                          label="Department"
+                                          required="#{bindings.DepartmentName.hints.mandatory}" disabled="true"
+                                          columns="#{bindings.DepartmentName.hints.displayWidth}"
+                                          maximumLength="#{bindings.DepartmentName.hints.precision}"
+                                          shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="it6">
+                                <f:validator binding="#{bindings.DepartmentName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.BusinessUnitName.inputValue}"
+                                          label="Business Unit" contentStyle="width:300px"
+                                          required="#{bindings.BusinessUnitName.hints.mandatory}" disabled="true"
+                                          columns="#{bindings.BusinessUnitName.hints.displayWidth}"
+                                          maximumLength="#{bindings.BusinessUnitName.hints.precision}"
+                                          shortDesc="#{bindings.BusinessUnitName.hints.tooltip}" id="it7">
+                                <f:validator binding="#{bindings.BusinessUnitName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Cadre.inputValue}" label="#{bindings.Cadre.hints.label}"
+                                          required="#{bindings.Cadre.hints.mandatory}" contentStyle="width:300px"
+                                          columns="#{bindings.Cadre.hints.displayWidth}" disabled="true"
+                                          maximumLength="#{bindings.Cadre.hints.precision}"
+                                          shortDesc="#{bindings.Cadre.hints.tooltip}" id="it8">
+                                <f:validator binding="#{bindings.Cadre.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
+                                          required="#{bindings.Email.hints.mandatory}" contentStyle="width:300px"
+                                          columns="#{bindings.Email.hints.displayWidth}" disabled="true"
+                                          maximumLength="#{bindings.Email.hints.precision}"
+                                          shortDesc="#{bindings.Email.hints.tooltip}" id="it9">
+                                <f:validator binding="#{bindings.Email.validator}"/>
+                            </af:inputText>
+                            <af:panelLabelAndMessage label="Attachment" id="plam2" showRequired="true">
+                                <af:spacer width="10" height="10" id="s7"/>
+                                <af:link text="" id="b4" icon="/images/attach_qualifier.png"
+                                         actionListener="#{backingBeanScope.addEditFuneral.onclickAttach}"/>
+                                <af:spacer width="10" height="10" id="s5"/>
+                                <af:outputText value="Attachment Added (#{bindings.XxfndAttachment_EOView2.estimatedRowCount})"
+                                               visible="#{bindings.XxfndAttachment_EOView2.estimatedRowCount ne 0}"
+                                               id="ot3" inlineStyle="font-size: small;color: Red;"/>
+                                <af:outputText value="Attachment is mandatory, Obituary or Death Certificate"
+                                              visible="#{bindings.XxfndAttachment_EOView2.estimatedRowCount eq 0}"
+                                               id="ot4" inlineStyle="font-size: small;color: Red;"/>
+                            </af:panelLabelAndMessage>
+                            
+                        <af:inputText value="#{bindings.EntitlementAmount.inputValue}"
+                                      label="Entitlement Amount" contentStyle="width:300px"
+                                      required="#{bindings.EntitlementAmount.hints.mandatory}" disabled="true"
+                                      columns="#{bindings.EntitlementAmount.hints.displayWidth}"
+                                      maximumLength="#{bindings.EntitlementAmount.hints.precision}"
+                                      shortDesc="#{bindings.EntitlementAmount.hints.tooltip}" id="it10"
+                                     >
+                            <f:validator binding="#{bindings.EntitlementAmount.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#,##,###"/>
+                        </af:inputText>
+                        <af:selectOneChoice value="#{bindings.DependentType.inputValue}"  
+                                            label="Relationship" contentStyle="width:300px"  immediate="true"
+                                             valueChangeListener="#{backingBeanScope.addEditFuneral.onClickDep}"
+                                            required="true"  autoSubmit="true" disabled="#{bindings.ApprovalStatus.inputValue eq 'DRAFT' ? false : true}"
+                                            shortDesc="#{bindings.DependentType.hints.tooltip}" id="soc1"
+                                            binding="#{backingBeanScope.addEditFuneral.depTypBind}">
+                            <f:selectItems value="#{bindings.DependentType.items}" id="si1"/>
+                            <f:validator binding="#{bindings.DependentType.validator}"/>
+                        </af:selectOneChoice>
+                        <af:inputText value="#{bindings.Comments.inputValue}" contentStyle="width:300px"
+                                          label="#{bindings.Comments.hints.label}" disabled="#{bindings.ApprovalStatus.inputValue eq 'DRAFT' ? false : true}"
+                                          required="#{bindings.Comments.hints.mandatory}"
+                                          columns="#{bindings.Comments.hints.displayWidth}"
+                                          maximumLength="#{bindings.Comments.hints.precision}"
+                                          shortDesc="#{bindings.Comments.hints.tooltip}" id="it13" rows="7">
+                                <f:validator binding="#{bindings.Comments.validator}"/>
+                            </af:inputText>
+                        </af:panelFormLayout>
+                    <af:spacer width="10" height="10" id="s6"/>
+                    <af:spacer width="10" height="10" id="s1"/>
+                
+                </af:panelBox>
+                 <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                          binding="#{backingBeanScope.addEditFuneral.popupAttach}">
+                    <af:dialog id="d1"  contentWidth="420" titleIconSource="/images/attach_qualifier.png"
+                
+                    type="ok" closeIconVisible="false" title="Attachment">
+                        <f:facet name="buttonBar"/>
+                        <af:panelBox  id="pb3" showDisclosure="false">
+                            <f:facet name="toolbar">
+                                <af:toolbar id="t3">
+                                    <af:link actionListener="#{bindings.CreateInsert.execute}"
+                                             id="l1"
+                                    disabled="#{bindings.ApprovalStatus.inputValue eq 'DRAFT' ? false : true}"
+                                              icon="/images/qual_added_16.png" hoverIcon="/images/func_add_16_hov.png"
+                                         depressedIcon="/images/func_add_16_act.png"
+                                         disabledIcon="/images/func_add_16_dis.png"
+                                             />
+                                </af:toolbar>
+                            </f:facet>
+                         
+                            <af:table value="#{bindings.XxfndAttachment_EOView2.collectionModel}" var="row"
+                                      rows="#{bindings.XxfndAttachment_EOView2.rangeSize}"
+                                      emptyText="#{bindings.XxfndAttachment_EOView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.XxfndAttachment_EOView2.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.XxfndAttachment_EOView2.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.XxfndAttachment_EOView2.rangeSize}"
+                                      id="t4" partialTriggers="::l1 l2"
+                                     >
+                                <af:column headerText="Name"
+                                           id="c4">
+                                    <af:outputText value="#{row.AttachmentName}"
+                                                   shortDesc="#{bindings.XxfndAttachment_EOView2.hints.AttachmentName.tooltip}"
+                                                   id="ot5"/>
+                                </af:column>
+                                <af:column headerText="Type"
+                                           id="c5">
+                                    <af:outputText value="#{row.AttachmentType}"
+                                                   shortDesc="#{bindings.XxfndAttachment_EOView2.hints.AttachmentType.tooltip}"
+                                                   id="ot8"/>
+                                </af:column>
+                                <af:column headerText="#{bindings.XxfndAttachment_EOView2.hints.Attachment.label}" rendered="false"
+                                           id="c6">
+                                    <af:outputText value="#{row.Attachment}"
+                                                   shortDesc="#{bindings.XxfndAttachment_EOView2.hints.Attachment.tooltip}"
+                                                   id="ot2"/>
+                                </af:column>
+                                
+                                  <af:column id="c24" headerText="Upload" width="200"
+                                            >
+                                    <af:inputFile id="if2" required="#{row.AttachmentName eq null ? true : false}"
+                                                  valueChangeListener="#{backingBeanScope.addEditFuneral.onUploadFileVCL}"
+                                                  autoSubmit="true"  disabled="#{bindings.ApprovalStatus.inputValue eq 'DRAFT' ? false : true}"
+                                                  binding="#{backingBeanScope.addEditFuneral.uploadFile}"/>
+                                </af:column>
+                                <af:column id="c3" width="100" headerText="Download">
+                                    <af:link icon="/images/func_download_16_act.png"
+                                             hoverIcon="/images/qual_download_16.png"
+                                             disabledIcon="/images/func_download_16_ena.png" id="l7">
+                                        <af:fileDownloadActionListener filename="#{row.AttachmentName}"
+                                                                       method="#{backingBeanScope.addEditFuneral.onDownloadProof}"/>
+                                    </af:link>
+                                </af:column>
+                                <af:column id="c29" headerText="Delete" align="center" width="50">
+                                    <af:link icon="/images/func_remove_16_ena.png" 
+                                    actionListener="#{bindings.Delete.execute}" 
+                                             disabled="#{bindings.ApprovalStatus.inputValue eq 'DRAFT' ? false : true}"  id="l2"
+                                             hoverIcon="/images/func_remove_16_hov.png"
+                                             depressedIcon="/images/func_report_16_act.png"
+                                             disabledIcon="/images/func_remove_16_dis.png" immediate="true"
+                                        />
+                                   
+                                </af:column>
+                            </af:table>
+                          
+                        </af:panelBox>
+                    </af:dialog>
+                </af:popup>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p2"  
+                          binding="#{backingBeanScope.addEditFuneral.attachError}">
+                    <af:dialog id="d2" type="ok" titleIconSource="/images/error_ena.png" closeIconVisible="false" title="Attachment" >
+                        <f:facet name="buttonBar"/>
+                        <af:outputText value="Attachment already exist !!" id="ot12"/>
+                    </af:dialog>
+                </af:popup>
+            </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="footerStart"/>
+        <f:facet name="footer"/>
+        <f:facet name="footerEnd"/>
+        <f:facet name="startPanel"/>
+        <f:facet name="endPanel"/>
+        <f:facet name="headerStart"/>
+        <f:facet name="header"/>
+        <f:facet name="headerEnd"/>
+    </af:pageTemplate>
+</jsp:root>

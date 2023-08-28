@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Employee_View_ROVO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.ro.Employee_View_ROVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="pPersonId"
+    Kind="viewcriteria"
+    Type="java.math.BigDecimal"/>
+  <SQLQuery><![CDATA[SELECT  
+    XXPER_EMPLOYEE_V.PERSON_ID PERSON_ID,  
+    XXPER_EMPLOYEE_V.EFFECTIVE_START_DATE EFFECTIVE_START_DATE,  
+    XXPER_EMPLOYEE_V.EFFECTIVE_END_DATE EFFECTIVE_END_DATE,  
+    XXPER_EMPLOYEE_V.BUSINESS_GROUP_ID BUSINESS_GROUP_ID,  
+    XXPER_EMPLOYEE_V.START_DATE START_DATE,  
+    XXPER_EMPLOYEE_V.APPLICANT_NUMBER APPLICANT_NUMBER,  
+    XXPER_EMPLOYEE_V.OBJECT_VERSION_NUMBER OBJECT_VERSION_NUMBER,  
+    XXPER_EMPLOYEE_V.PERSON_NUMBER PERSON_NUMBER,  
+    XXPER_EMPLOYEE_V.PRIMARY_EMAIL_ID PRIMARY_EMAIL_ID,  
+    XXPER_EMPLOYEE_V.PRIMARY_PHONE_ID PRIMARY_PHONE_ID,  
+    XXPER_EMPLOYEE_V.MAILING_ADDRESS_ID MAILING_ADDRESS_ID,  
+    XXPER_EMPLOYEE_V.PRIMARY_NID_ID PRIMARY_NID_ID,  
+    XXPER_EMPLOYEE_V.PERSON_NAME_ID PERSON_NAME_ID,  
+    XXPER_EMPLOYEE_V.NAME_TYPE NAME_TYPE,  
+    XXPER_EMPLOYEE_V.LAST_NAME LAST_NAME,  
+    XXPER_EMPLOYEE_V.FIRST_NAME FIRST_NAME,  
+    XXPER_EMPLOYEE_V.MIDDLE_NAMES MIDDLE_NAMES,  
+    XXPER_EMPLOYEE_V.TITLE TITLE,  
+    XXPER_EMPLOYEE_V.DISPLAY_NAME DISPLAY_NAME,  
+    XXPER_EMPLOYEE_V.FULL_NAME FULL_NAME,  
+    XXPER_EMPLOYEE_V.LIST_NAME LIST_NAME,  
+    XXPER_EMPLOYEE_V.ORDER_NAME ORDER_NAME,  
+    XXPER_EMPLOYEE_V.DATE_OF_BIRTH DATE_OF_BIRTH,  
+    XXPER_EMPLOYEE_V.DATE_OF_DEATH DATE_OF_DEATH,  
+    XXPER_EMPLOYEE_V.COUNTRY_OF_BIRTH COUNTRY_OF_BIRTH,  
+    XXPER_EMPLOYEE_V.REGION_OF_BIRTH REGION_OF_BIRTH,  
+    XXPER_EMPLOYEE_V.TOWN_OF_BIRTH TOWN_OF_BIRTH,  
+    XXPER_EMPLOYEE_V.ASSIGNMENT_ID ASSIGNMENT_ID,  
+    XXPER_EMPLOYEE_V.EFFECTIVE_LATEST_CHANGE EFFECTIVE_LATEST_CHANGE,  
+    XXPER_EMPLOYEE_V.EFFECTIVE_SEQUENCE EFFECTIVE_SEQUENCE,  
+    XXPER_EMPLOYEE_V.ASSIGNMENT_TYPE ASSIGNMENT_TYPE,  
+    XXPER_EMPLOYEE_V.ASSIGNMENT_NUMBER ASSIGNMENT_NUMBER,  
+    XXPER_EMPLOYEE_V.ASSIGNMENT_NAME ASSIGNMENT_NAME,  
+    XXPER_EMPLOYEE_V.ASSIGNMENT_STATUS_TYPE_ID ASSIGNMENT_STATUS_TYPE_ID,  
+    XXPER_EMPLOYEE_V.ASSIGNMENT_STATUS_TYPE ASSIGNMENT_STATUS_TYPE,  
+    XXPER_EMPLOYEE_V.PRIMARY_FLAG PRIMARY_FLAG,  
+    XXPER_EMPLOYEE_V.ORGANIZATION_ID ORGANIZATION_ID,  
+    XXPER_EMPLOYEE_V.JOB_ID JOB_ID,  
+    XXPER_EMPLOYEE_V.LOCATION_ID LOCATION_ID,  
+    XXPER_EMPLOYEE_V.POSITION_ID POSITION_ID,  
+    XXPER_EMPLOYEE_V.GRADE_ID GRADE_ID,  
+    XXPER_EMPLOYEE_V.PEOPLE_GROUP_ID PEOPLE_GROUP_ID,  
+    XXPER_EMPLOYEE_V.LEGAL_ENTITY_ID LEGAL_ENTITY_ID,  
+    XXPER_EMPLOYEE_V.BUSINESS_UNIT_ID BUSINESS_UNIT_ID,  
+    XXPER_EMPLOYEE_V.PERSON_TYPE_ID PERSON_TYPE_ID,  
+    XXPER_EMPLOYEE_V.PRIMARY_ASSIGNMENT_FLAG PRIMARY_ASSIGNMENT_FLAG,  
+    XXPER_EMPLOYEE_V.EMAIL_ADDRESS_ID EMAIL_ADDRESS_ID,  
+    XXPER_EMPLOYEE_V.EMAIL_TYPE EMAIL_TYPE,  
+    XXPER_EMPLOYEE_V.EMAIL_ADDRESS EMAIL_ADDRESS,  
+    XXPER_EMPLOYEE_V.PASSPORT_ID PASSPORT_ID,  
+    XXPER_EMPLOYEE_V.PASSPORT_NUMBER PASSPORT_NUMBER,  
+    XXPER_EMPLOYEE_V.PASSPORT_TYPE PASSPORT_TYPE,  
+    XXPER_EMPLOYEE_V.ISSUING_AUTHORITY ISSUING_AUTHORITY,  
+    XXPER_EMPLOYEE_V.ISSUING_COUNTRY ISSUING_COUNTRY,  
+    XXPER_EMPLOYEE_V.ISSUING_LOCATION ISSUING_LOCATION,  
+    XXPER_EMPLOYEE_V.PROFESSION PROFESSION,  
+    XXPER_EMPLOYEE_V.BUSINESS_UNIT_NAME BUSINESS_UNIT_NAME  
+FROM  
+    XXPER_EMPLOYEE_V]]></SQLQuery>
+  <ViewAttribute
+    Name="PersonId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PERSON_ID"
+    Expression="PERSON_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="EffectiveStartDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="EFFECTIVE_START_DATE"
+    Expression="EFFECTIVE_START_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="EffectiveEndDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="EFFECTIVE_END_DATE"
+    Expression="EFFECTIVE_END_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="BusinessGroupId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="BUSINESS_GROUP_ID"
+    Expression="BUSINESS_GROUP_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="StartDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="START_DATE"
+    Expression="START_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="ApplicantNumber"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="APPLICANT_NUMBER"
+    Expression="APPLICANT_NUMBER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ObjectVersionNumber"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="OBJECT_VERSION_NUMBER"
+    Expression="OBJECT_VERSION_NUMBER"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="PersonNumber"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PERSON_NUMBER"
+    Expression="PERSON_NUMBER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PrimaryEmailId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PRIMARY_EMAIL_ID"
+    Expression="PRIMARY_EMAIL_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="PrimaryPhoneId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PRIMARY_PHONE_ID"
+    Expression="PRIMARY_PHONE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="MailingAddressId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="MAILING_ADDRESS_ID"
+    Expression="MAILING_ADDRESS_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="PrimaryNidId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PRIMARY_NID_ID"
+    Expression="PRIMARY_NID_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="PersonNameId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PERSON_NAME_ID"
+    Expression="PERSON_NAME_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="NameType"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NAME_TYPE"
+    Expression="NAME_TYPE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="LAST_NAME"
+    Expression="LAST_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FirstName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FIRST_NAME"
+    Expression="FIRST_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MiddleNames"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MIDDLE_NAMES"
+    Expression="MIDDLE_NAMES"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Title"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TITLE"
+    Expression="TITLE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DisplayName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="240"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="DISPLAY_NAME"
+    Expression="DISPLAY_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FullName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="2000"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FULL_NAME"
+    Expression="FULL_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2000"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.ro.Employee_View_ROVO.FullName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <DISPLAYHEIGHT
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ListName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="240"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="LIST_NAME"
+    Expression="LIST_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OrderName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="240"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ORDER_NAME"
+    Expression="ORDER_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DateOfBirth"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="DATE_OF_BIRTH"
+    Expression="DATE_OF_BIRTH"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="DateOfDeath"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="DATE_OF_DEATH"
+    Expression="DATE_OF_DEATH"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="CountryOfBirth"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="240"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="COUNTRY_OF_BIRTH"
+    Expression="COUNTRY_OF_BIRTH"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RegionOfBirth"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="240"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="REGION_OF_BIRTH"
+    Expression="REGION_OF_BIRTH"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TownOfBirth"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="240"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TOWN_OF_BIRTH"
+    Expression="TOWN_OF_BIRTH"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AssignmentId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ASSIGNMENT_ID"
+    Expression="ASSIGNMENT_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="EffectiveLatestChange"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="EFFECTIVE_LATEST_CHANGE"
+    Expression="EFFECTIVE_LATEST_CHANGE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EffectiveSequence"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="EFFECTIVE_SEQUENCE"
+    Expression="EFFECTIVE_SEQUENCE"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="AssignmentType"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ASSIGNMENT_TYPE"
+    Expression="ASSIGNMENT_TYPE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AssignmentNumber"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ASSIGNMENT_NUMBER"
+    Expression="ASSIGNMENT_NUMBER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AssignmentName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ASSIGNMENT_NAME"
+    Expression="ASSIGNMENT_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AssignmentStatusTypeId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ASSIGNMENT_STATUS_TYPE_ID"
+    Expression="ASSIGNMENT_STATUS_TYPE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="AssignmentStatusType"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ASSIGNMENT_STATUS_TYPE"
+    Expression="ASSIGNMENT_STATUS_TYPE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PrimaryFlag"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PRIMARY_FLAG"
+    Expression="PRIMARY_FLAG"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OrganizationId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ORGANIZATION_ID"
+    Expression="ORGANIZATION_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="JobId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="JOB_ID"
+    Expression="JOB_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="LocationId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LOCATION_ID"
+    Expression="LOCATION_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="PositionId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="POSITION_ID"
+    Expression="POSITION_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="GradeId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="GRADE_ID"
+    Expression="GRADE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="PeopleGroupId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PEOPLE_GROUP_ID"
+    Expression="PEOPLE_GROUP_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="LegalEntityId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LEGAL_ENTITY_ID"
+    Expression="LEGAL_ENTITY_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="BusinessUnitId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="BUSINESS_UNIT_ID"
+    Expression="BUSINESS_UNIT_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="PersonTypeId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PERSON_TYPE_ID"
+    Expression="PERSON_TYPE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="PrimaryAssignmentFlag"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PRIMARY_ASSIGNMENT_FLAG"
+    Expression="PRIMARY_ASSIGNMENT_FLAG"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EmailAddressId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="EMAIL_ADDRESS_ID"
+    Expression="EMAIL_ADDRESS_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="EmailType"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="EMAIL_TYPE"
+    Expression="EMAIL_TYPE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EmailAddress"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="240"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="EMAIL_ADDRESS"
+    Expression="EMAIL_ADDRESS"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PassportId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PASSPORT_ID"
+    Expression="PASSPORT_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="PassportNumber"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="120"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PASSPORT_NUMBER"
+    Expression="PASSPORT_NUMBER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="120"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PassportType"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="120"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PASSPORT_TYPE"
+    Expression="PASSPORT_TYPE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="120"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IssuingAuthority"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="400"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ISSUING_AUTHORITY"
+    Expression="ISSUING_AUTHORITY"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="400"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IssuingCountry"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="120"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ISSUING_COUNTRY"
+    Expression="ISSUING_COUNTRY"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="120"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IssuingLocation"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="400"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ISSUING_LOCATION"
+    Expression="ISSUING_LOCATION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="400"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Profession"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="120"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PROFESSION"
+    Expression="PROFESSION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="120"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BusinessUnitName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="240"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BUSINESS_UNIT_NAME"
+    Expression="BUSINESS_UNIT_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="EmployeeName_View_Criteria"
+    ViewObjectName="model.ro.Employee_View_ROVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="Employee_View_ROVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="FullName"
+        ViewAttribute="FullName"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Required="Optional"
+        UpperColumns="1"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="filterByPersonId"
+    ViewObjectName="model.ro.Employee_View_ROVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="Employee_View_ROVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="PersonId"
+        ViewAttribute="PersonId"
+        Operator="="
+        Conjunction="AND"
+        Value=":pPersonId"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="searchFuneralPageDef"
+                Package="fragment">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="XXSSHR_FUNERAL_SUPPORT_VO" RangeSize="6" DataControl="Oando_AMDataControl"
+              id="XXSSHR_FUNERAL_SUPPORT_VOIterator"/>
+    <iterator Binds="HMOApprovalCount_ROVO" RangeSize="10" DataControl="Oando_AMDataControl"
+              id="HMOApprovalCount_ROVOIterator"/>
+    <searchRegion Criteria="search_Vc" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="searchVcQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="XXSSHR_FUNERAL_SUPPORT_VO">
+      <nodeDefinition DefName="model.vo.XXSSHR_FUNERAL_SUPPORT_VO" Name="XXSSHR_FUNERAL_SUPPORT_VO0">
+        <AttrNames>
+          <Item Value="FuneralReqNo"/>
+          <Item Value="RequestDate"/>
+          <Item Value="DependentType"/>
+          <Item Value="EntitlementAmount"/>
+          <Item Value="ApprovalStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="FuneralReqId">
+      <AttrNames>
+        <Item Value="FuneralReqId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOApprovalCount_ROVOIterator" id="AllCount">
+      <AttrNames>
+        <Item Value="AllCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOApprovalCount_ROVOIterator" id="SubmittedCount">
+      <AttrNames>
+        <Item Value="SubmittedCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOApprovalCount_ROVOIterator" id="ApprovedCount">
+      <AttrNames>
+        <Item Value="ApprovedCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOApprovalCount_ROVOIterator" id="RejectedCount">
+      <AttrNames>
+        <Item Value="RejectedCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOApprovalCount_ROVOIterator" id="DraftCount">
+      <AttrNames>
+        <Item Value="DraftCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="DeleteFlag">
+      <AttrNames>
+        <Item Value="DeleteFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="Oando_AMDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

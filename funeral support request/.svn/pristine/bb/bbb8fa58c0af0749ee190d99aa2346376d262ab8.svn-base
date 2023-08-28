@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HMOOtherRequestCount_ROVO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[select     
+(select count(*) from XXHR_HMO_OTHER_REQUEST_DETAILS_V where DELETE_FLAG = 'N' and APPROVAL_STATUS in ('SUBMITTED FOR APPROVAL','APPROVED'))  AS ALL_COUNT,   
+(select count(*) from XXHR_HMO_OTHER_REQUEST_DETAILS_V where DELETE_FLAG = 'N' and APPROVAL_STATUS in ('SUBMITTED FOR APPROVAL','APPROVED') and REQUEST_TYPE = 'MAINTANCE')  AS MAINTANCE,   
+(select count(*) from XXHR_HMO_OTHER_REQUEST_DETAILS_V where DELETE_FLAG = 'N' and APPROVAL_STATUS in ('SUBMITTED FOR APPROVAL','APPROVED') and REQUEST_TYPE = 'REIMBURSEMENT_CLAIM')  AS REIMBURSEMENT_CLAIM,   
+(select count(*) from XXHR_HMO_OTHER_REQUEST_DETAILS_V where DELETE_FLAG = 'N' and APPROVAL_STATUS in ('SUBMITTED FOR APPROVAL','APPROVED') and REQUEST_TYPE = 'COMPLAINT')  AS COMPLAINT,   
+(select count(*) from XXHR_HMO_OTHER_REQUEST_DETAILS_V where DELETE_FLAG = 'N' and APPROVAL_STATUS in ('SUBMITTED FOR APPROVAL','APPROVED') and REQUEST_TYPE = 'CARD')  AS CARD,   
+(select count(*) from XXHR_HMO_OTHER_REQUEST_DETAILS_V where DELETE_FLAG = 'N' and APPROVAL_STATUS in ('SUBMITTED FOR APPROVAL','APPROVED') and REQUEST_TYPE = 'NEW_DEPENDENT')  AS NEW_DEPENDENT   
+from dual]]></SQLQuery>
+  <ViewAttribute
+    Name="AllCount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ALL_COUNT"
+    Expression="ALL_COUNT"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Maintance"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="MAINTANCE"
+    Expression="MAINTANCE"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ReimbursementClaim"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="REIMBURSEMENT_CLAIM"
+    Expression="REIMBURSEMENT_CLAIM"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Complaint"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="COMPLAINT"
+    Expression="COMPLAINT"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Card"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CARD"
+    Expression="CARD"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="NewDependent"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="NEW_DEPENDENT"
+    Expression="NEW_DEPENDENT"
+    SQLType="NUMERIC"/>
+</ViewObject>

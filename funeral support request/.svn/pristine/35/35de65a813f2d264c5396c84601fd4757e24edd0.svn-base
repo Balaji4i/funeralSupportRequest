@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="ManageHMO_BTF_ManageHMO_BTF_ExecuteWithParamsPageDef" Package="taskflow" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="XxhrHmoTrxHdr_EOView" RangeSize="25" DataControl="Oando_AMDataControl"
+              id="XxhrHmoTrxHdr_EOViewIterator" />
+  </executables>
+  <bindings>
+    <action IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="ExecuteWithParams"
+    RequiresUpdateModel="true" InstanceName="Oando_AMDataControl.XxhrHmoTrxHdr_EOView"
+    DataControl="Oando_AMDataControl"
+            Action="executeWithParams">
+      <NamedData NDName="BV_TRX_HDR_ID" NDValue="#{pageFlowScope.hmoTrxHdrID}" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

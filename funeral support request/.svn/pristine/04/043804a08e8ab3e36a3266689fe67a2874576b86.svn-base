@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">MedicalDetails</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">347.0</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>MedicalDetails&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">230.49414</property>
+      <property
+         name="page">/fragment/MedicalDetails.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">toSearch</property>
+      <property
+         name="x">618.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>toSearch&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  toSearch&lt;/p></property>
+      <property
+         name="y">232.14355</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">toSearch</property>
+      <property
+         name="sdm:polyPoints">R50,388.0,230.14355,577.0,231.79297,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall5">
+      <property
+         name="activityId">ExecuteWithParams</property>
+      <property
+         name="x">100.35156</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">232.74707</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="MethodCall5"
+      to="View2">
+      <property
+         name="fromOutcome">ExecuteWithParams</property>
+      <property
+         name="sdm:polyPoints">R50,141.35156,232.39648,306.0,230.14355,L50</property>
+   </ControlFlowCase>
+</SDM>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="CardReplacement_BTF_CardReplacement_BTF_ExecuteWithParamsPageDef" Package="taskflow"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="HMOCard_VO" RangeSize="25" DataControl="Oando_AMDataControl" id="HMOCard_VOIterator"
+              Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="HMOCard_VOIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="BV_CARD_ID" NDValue="#{pageFlowScope.RequestEditID}" NDType="java.math.BigDecimal"/>
+    </action>
+  </bindings>
+</pageDefinition>

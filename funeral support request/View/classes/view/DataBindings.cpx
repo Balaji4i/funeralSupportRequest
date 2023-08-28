@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+             <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/profilepictureservlet" usageId="view_servlet_ProfilePictureServletPageDef"/>
+    <page path="/pages/FilmStrip.jspx" usageId="view_FilmStripPageDef"/>
+    <page path="/fragment/SearchHMO.jsff" usageId="view_SearchHMOPageDef"/>
+    <page path="/fragment/ManageHMO.jsff" usageId="view_ManageHMOPageDef"/>
+    <page path="/WEB-INF/taskflow/ManageHMO_BTF.xml#ManageHMO_BTF@ExecuteWithParams"
+          usageId="view_ManageHMO_BTF_ManageHMO_BTF_ExecuteWithParamsPageDef"/>
+    <page path="/fragment/SearchAdditionalRequest.jsff" usageId="view_SearchAdditionalRequestPageDef"/>
+    <page path="/WEB-INF/taskflow/MedicalDetails_BTF.xml#MedicalDetails_BTF@ExecuteWithParams"
+          usageId="view_MedicalDetails_BTF_MedicalDetails_BTF_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/taskflow/Complaints_BTF.xml#Complaints_BTF@ExecuteWithParams"
+          usageId="view_Complaints_BTF_Complaints_BTF_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/taskflow/CardReplacement_BTF.xml#CardReplacement_BTF@ExecuteWithParams"
+          usageId="view_CardReplacement_BTF_CardReplacement_BTF_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/taskflow/ReimbursementClaim_BTF.xml#ReimbursementClaim_BTF@ExecuteWithParams"
+          usageId="view_ReimbursementClaim_BTF_ReimbursementClaim_BTF_ExecuteWithParamsPageDef"/>
+    <page path="/fragment/MedicalDetails.jsff" usageId="view_MedicalDetailsPageDef"/>
+    <page path="/fragment/ReimbursementClaim.jsff" usageId="view_ReimbursementClaimPageDef"/>
+    <page path="/fragment/Complaints.jsff" usageId="view_ComplaintsPageDef"/>
+    <page path="/fragment/CardReplacement.jsff" usageId="view_CardReplacementPageDef"/>
+    <page path="/WEB-INF/taskflow/SearchAdditionalRequests.xml#SearchAdditionalRequests@ExecuteTable"
+          usageId="view_SearchAdditionalRequests_SearchAdditionalRequests_ExecutePageDef"/>
+    <page path="/WEB-INF/taskflow/SearchAdditionalRequests.xml#SearchAdditionalRequests@ExecuteCount"
+          usageId="view_SearchAdditionalRequests_SearchAdditionalRequests_Execute1PageDef"/>
+    <page path="/WEB-INF/taskflow/NewDependent_BTF.xml#NewDependent_BTF@ExecuteWithParams"
+          usageId="view_NewDependent_BTF_NewDependent_BTF_ExecuteWithParamsPageDef"/>
+    <page path="/fragment/NewDependent.jsff" usageId="view_NewDependentPageDef"/>
+    <page path="/WEB-INF/taskflow/SearchRemoteWork_BTF.xml#SearchRemoteWork_BTF@filterUser"
+          usageId="view_SearchRemoteWork_BTF_SearchRemoteWork_BTF_filterUserPageDef"/>
+    <page path="/WEB-INF/taskflow/SearchRemoteWork_BTF.xml#SearchRemoteWork_BTF@Execute"
+          usageId="view_SearchRemoteWork_BTF_SearchRemoteWork_BTF_ExecutePageDef"/>
+    <page path="/WEB-INF/taskflow/AddEditRemoteWork_BTF.xml#AddEditRemoteWork_BTF@ExecuteWithParams"
+          usageId="view_AddEditRemoteWork_BTF_AddEditRemoteWork_BTF_ExecuteWithParamsPageDef"/>
+    <page path="/fragment/SearchRemoteWork.jsff" usageId="view_SearchRemoteWorkPageDef"/>
+    <page path="/fragment/AddEditRemoteWork.jsff" usageId="view_AddEditRemoteWorkPageDef"/>
+    <page path="/WEB-INF/taskflow/SearchRemoteWork_BTF.xml#SearchRemoteWork_BTF@Execute1"
+          usageId="view_SearchRemoteWork_BTF_SearchRemoteWork_BTF_Execute1PageDef"/>
+    <page path="/WEB-INF/taskflow/SearchRemoteWork_BTF.xml#SearchRemoteWork_BTF@filterUser1"
+          usageId="view_SearchRemoteWork_BTF_SearchRemoteWork_BTF_filterUser1PageDef"/>
+    <page path="/WEB-INF/taskflow/SearchFuneral_BTF.xml#SearchFuneral_BTF@filterUser"
+          usageId="view_SearchFuneral_BTF_SearchFuneral_BTF_filterUserPageDef"/>
+    <page path="/WEB-INF/taskflow/SearchFuneral_BTF.xml#SearchFuneral_BTF@Execute"
+          usageId="view_SearchFuneral_BTF_SearchFuneral_BTF_ExecutePageDef"/>
+    <page path="/WEB-INF/taskflow/AddEditFuneral_BTF.xml#AddEditFuneral_BTF@ExecuteWithParams"
+          usageId="view_AddEditFuneral_BTF_AddEditFuneral_BTF_ExecuteWithParamsPageDef"/>
+    <page path="/fragment/searchFuneral.jsff" usageId="view_searchFuneralPageDef"/>
+    <page path="/fragment/addEditFuneral.jsff" usageId="view_addEditFuneralPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_servlet_ProfilePictureServletPageDef" path="fragment.ProfilePictureServletPageDef"/>
+    <page id="view_FilmStripPageDef" path="pages.FilmStripPageDef"/>
+    <page id="view_SearchHMOPageDef" path="fragment.SearchHMOPageDef"/>
+    <page id="view_ManageHMOPageDef" path="fragment.ManageHMOPageDef"/>
+    <page id="view_ManageHMO_BTF_ManageHMO_BTF_ExecuteWithParamsPageDef"
+          path="taskflow.ManageHMO_BTF_ManageHMO_BTF_ExecuteWithParamsPageDef"/>
+    <page id="view_SearchAdditionalRequestPageDef" path="fragment.SearchAdditionalRequestPageDef"/>
+    <page id="view_MedicalDetails_BTF_MedicalDetails_BTF_ExecuteWithParamsPageDef"
+          path="taskflow.MedicalDetails_BTF_MedicalDetails_BTF_ExecuteWithParamsPageDef"/>
+    <page id="view_Complaints_BTF_Complaints_BTF_ExecuteWithParamsPageDef"
+          path="taskflow.Complaints_BTF_Complaints_BTF_ExecuteWithParamsPageDef"/>
+    <page id="view_CardReplacement_BTF_CardReplacement_BTF_ExecuteWithParamsPageDef"
+          path="taskflow.CardReplacement_BTF_CardReplacement_BTF_ExecuteWithParamsPageDef"/>
+    <page id="view_ReimbursementClaim_BTF_ReimbursementClaim_BTF_ExecuteWithParamsPageDef"
+          path="taskflow.ReimbursementClaim_BTF_ReimbursementClaim_BTF_ExecuteWithParamsPageDef"/>
+    <page id="view_MedicalDetailsPageDef" path="fragment.MedicalDetailsPageDef"/>
+    <page id="view_ReimbursementClaimPageDef" path="fragment.ReimbursementClaimPageDef"/>
+    <page id="view_ComplaintsPageDef" path="fragment.ComplaintsPageDef"/>
+    <page id="view_CardReplacementPageDef" path="fragment.CardReplacementPageDef"/>
+    <page id="view_SearchAdditionalRequests_SearchAdditionalRequests_ExecutePageDef"
+          path="taskflow.SearchAdditionalRequests_SearchAdditionalRequests_ExecutePageDef"/>
+    <page id="view_SearchAdditionalRequests_SearchAdditionalRequests_Execute1PageDef"
+          path="taskflow.SearchAdditionalRequests_SearchAdditionalRequests_Execute1PageDef"/>
+    <page id="view_NewDependent_BTF_NewDependent_BTF_ExecuteWithParamsPageDef"
+          path="taskflow.NewDependent_BTF_NewDependent_BTF_ExecuteWithParamsPageDef"/>
+    <page id="view_NewDependentPageDef" path="fragment.NewDependentPageDef"/>
+    <page id="view_SearchRemoteWork_BTF_SearchRemoteWork_BTF_filterUserPageDef"
+          path="taskflow.SearchRemoteWork_BTF_SearchRemoteWork_BTF_filterUserPageDef"/>
+    <page id="view_SearchRemoteWork_BTF_SearchRemoteWork_BTF_ExecutePageDef"
+          path="taskflow.SearchRemoteWork_BTF_SearchRemoteWork_BTF_ExecutePageDef"/>
+    <page id="view_AddEditRemoteWork_BTF_AddEditRemoteWork_BTF_ExecuteWithParamsPageDef"
+          path="taskflow.AddEditRemoteWork_BTF_AddEditRemoteWork_BTF_ExecuteWithParamsPageDef"/>
+    <page id="view_SearchRemoteWorkPageDef" path="fragment.SearchRemoteWorkPageDef"/>
+    <page id="view_AddEditRemoteWorkPageDef" path="fragment.AddEditRemoteWorkPageDef"/>
+    <page id="view_SearchRemoteWork_BTF_SearchRemoteWork_BTF_Execute1PageDef"
+          path="taskflow.SearchRemoteWork_BTF_SearchRemoteWork_BTF_Execute1PageDef"/>
+    <page id="view_SearchRemoteWork_BTF_SearchRemoteWork_BTF_filterUser1PageDef"
+          path="taskflow.SearchRemoteWork_BTF_SearchRemoteWork_BTF_filterUser1PageDef"/>
+    <page id="view_SearchFuneral_BTF_SearchFuneral_BTF_filterUserPageDef"
+          path="taskflow.SearchFuneral_BTF_SearchFuneral_BTF_filterUserPageDef"/>
+    <page id="view_SearchFuneral_BTF_SearchFuneral_BTF_ExecutePageDef"
+          path="taskflow.SearchFuneral_BTF_SearchFuneral_BTF_ExecutePageDef"/>
+    <page id="view_AddEditFuneral_BTF_AddEditFuneral_BTF_ExecuteWithParamsPageDef"
+          path="taskflow.AddEditFuneral_BTF_AddEditFuneral_BTF_ExecuteWithParamsPageDef"/>
+    <page id="view_searchFuneralPageDef" path="fragment.searchFuneralPageDef"/>
+    <page id="view_addEditFuneralPageDef" path="fragment.addEditFuneralPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="Oando_AMDataControl" Package="model.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="Oando_AMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

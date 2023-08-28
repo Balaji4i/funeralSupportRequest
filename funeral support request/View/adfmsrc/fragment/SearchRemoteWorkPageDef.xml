@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="SearchRemoteWorkPageDef"
+                Package="fragment">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="XXHR_REMOTE_WORK_VO1" RangeSize="10" DataControl="Oando_AMDataControl"
+              id="XXHR_REMOTE_WORK_VO1Iterator"/>
+    <searchRegion Criteria="searchVC" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="XXHR_REMOTE_WORK_VO1Iterator" id="searchVCQuery"/>
+    <iterator Binds="HMOApprovalCount_ROVO" RangeSize="10" DataControl="Oando_AMDataControl"
+              id="HMOApprovalCount_ROVOIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="XXHR_REMOTE_WORK_VO1">
+      <nodeDefinition DefName="model.vo.XXHR_REMOTE_WORK_VO" Name="XXHR_REMOTE_WORK_VO10">
+        <AttrNames>
+          <Item Value="RemoteReqNo"/>
+          <Item Value="RequestDate"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+          <Item Value="NoOfDays"/>
+          <Item Value="Location"/>
+          <Item Value="ApprovalStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="RemoteReqId">
+      <AttrNames>
+        <Item Value="RemoteReqId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOApprovalCount_ROVOIterator" id="AllCount">
+      <AttrNames>
+        <Item Value="AllCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOApprovalCount_ROVOIterator" id="SubmittedCount">
+      <AttrNames>
+        <Item Value="SubmittedCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOApprovalCount_ROVOIterator" id="ApprovedCount">
+      <AttrNames>
+        <Item Value="ApprovedCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOApprovalCount_ROVOIterator" id="RejectedCount">
+      <AttrNames>
+        <Item Value="RejectedCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOApprovalCount_ROVOIterator" id="DraftCount">
+      <AttrNames>
+        <Item Value="DraftCount"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

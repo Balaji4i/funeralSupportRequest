@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="linkStyle">Orthogonal</property>
+   </OverallProperties>
+   <View
+      id="View2">
+      <property
+         name="activityId">NewDependent</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">381.0</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>NewDependent&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">236.14355</property>
+      <property
+         name="page">/fragment/NewDependent.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">toSearch</property>
+      <property
+         name="x">625.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>toSearch&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  toSearch&lt;/p></property>
+      <property
+         name="y">237.19531</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">toSearch</property>
+      <property
+         name="sdm:polyPoints">R50,503.0,235.79297,503.0,236.84473,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall5">
+      <property
+         name="activityId">ExecuteWithParams</property>
+      <property
+         name="x">140.35156</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">237.74707</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="MethodCall5"
+      to="View2">
+      <property
+         name="fromOutcome">ExecuteWithParams</property>
+      <property
+         name="sdm:polyPoints">R50,260.67578,237.39648,260.67578,235.79297,L50</property>
+   </ControlFlowCase>
+</SDM>

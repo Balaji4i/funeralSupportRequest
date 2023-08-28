@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="SearchAdditionalRequestPageDef"
+                Package="fragment">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SearchHMOOtherRequests_ROVO" RangeSize="25" DataControl="Oando_AMDataControl"
+              id="SearchOtherRequests_ROVOIterator" ChangeEventPolicy="none"/>
+    <searchRegion Binds="SearchOtherRequests_ROVOIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="SearchHMOOtherRequests_ROVOQuery"/>
+    <searchRegion Criteria="SearchRequest" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SearchOtherRequests_ROVOIterator" id="SearchRequestQuery"/>
+    <iterator Binds="HMOOtherRequestCount_ROVO" RangeSize="25" DataControl="Oando_AMDataControl"
+              id="HMOOtherRequestCount_ROVOIterator" ChangeEventPolicy="none"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SearchOtherRequests_ROVOIterator" id="SearchHMOOtherRequests_ROVO">
+      <nodeDefinition DefName="model.ro.SearchHMOOtherRequests_ROVO" Name="SearchHMOOtherRequests_ROVO0">
+        <AttrNames>
+          <Item Value="RequestNo"/>
+          <Item Value="RequestNumber"/>
+          <Item Value="HmoTransReference"/>
+          <Item Value="PersonNumber"/>
+          <Item Value="Title"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Reason"/>
+          <Item Value="RequestType"/>
+          <Item Value="RequestDetails"/>
+          <Item Value="ApprovalStatus"/>
+          <Item Value="CreationDate"/>
+          <Item Value="Emailaddress"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="HMOOtherRequestCount_ROVOIterator" id="AllCount">
+      <AttrNames>
+        <Item Value="AllCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOOtherRequestCount_ROVOIterator" id="Maintance">
+      <AttrNames>
+        <Item Value="Maintance"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOOtherRequestCount_ROVOIterator" id="ReimbursementClaim">
+      <AttrNames>
+        <Item Value="ReimbursementClaim"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOOtherRequestCount_ROVOIterator" id="Complaint">
+      <AttrNames>
+        <Item Value="Complaint"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOOtherRequestCount_ROVOIterator" id="Card">
+      <AttrNames>
+        <Item Value="Card"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOOtherRequestCount_ROVOIterator" id="NewDependent">
+      <AttrNames>
+        <Item Value="NewDependent"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

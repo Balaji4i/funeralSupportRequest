@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="META-INF/adfc-config.xml" id="" type="" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/taskflow/AddEditFuneral_BTF.xml" id="AddEditFuneral_BTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp">
+      <input-parameter name="mode"/>
+      <input-parameter name="headerId"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/taskflow/AddEditRemoteWork_BTF.xml" id="AddEditRemoteWork_BTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp">
+      <input-parameter name="mode"/>
+      <input-parameter name="headerId"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/taskflow/CardReplacement_BTF.xml" id="CardReplacement_BTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified">
+      <input-parameter name="RequestEditID"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/taskflow/Complaints_BTF.xml" id="Complaints_BTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified">
+      <input-parameter name="RequestEditID"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/taskflow/ManageHMO_BTF.xml" id="ManageHMO_BTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified">
+      <input-parameter name="hmoTrxHdrID"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/taskflow/MedicalDetails_BTF.xml" id="MedicalDetails_BTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified">
+      <input-parameter name="RequestEditID"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/taskflow/NewDependent_BTF.xml" id="NewDependent_BTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified">
+      <input-parameter name="RequestEditID"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/taskflow/ReimbursementClaim_BTF.xml" id="ReimbursementClaim_BTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified">
+      <input-parameter name="RequestEditID"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/taskflow/SearchAdditionalRequests.xml" id="SearchAdditionalRequests" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified"/>
+   <task-flow-descriptor path="WEB-INF/taskflow/SearchFuneral_BTF.xml" id="SearchFuneral_BTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/taskflow/SearchHMO_BTF.xml" id="SearchHMO_BTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified"/>
+   <task-flow-descriptor path="WEB-INF/taskflow/SearchRemoteWork_BTF.xml" id="SearchRemoteWork_BTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+</task-flow-registry>

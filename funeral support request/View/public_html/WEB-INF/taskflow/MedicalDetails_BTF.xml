@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="MedicalDetails_BTF">
+    <default-activity>ExecuteWithParams</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition id="__1">
+      <name>RequestEditID</name>
+      <value>#{pageFlowScope.RequestEditID}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <managed-bean id="__6">
+      <managed-bean-name>MedicalDetailsBB</managed-bean-name>
+      <managed-bean-class>com.view.beans.MedicalDetailsBB</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="MedicalDetails">
+      <page>/fragment/MedicalDetails.jsff</page>
+    </view>
+    <task-flow-return id="toSearch">
+      <outcome>
+        <name>toSearch</name>
+      </outcome>
+    </task-flow-return>
+    <method-call id="ExecuteWithParams">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__2">
+      <from-activity-id>MedicalDetails</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>toSearch</from-outcome>
+        <to-activity-id>toSearch</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>ExecuteWithParams</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>ExecuteWithParams</from-outcome>
+        <to-activity-id>MedicalDetails</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

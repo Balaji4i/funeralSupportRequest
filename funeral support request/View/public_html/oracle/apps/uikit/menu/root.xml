@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+-->
+<menu>
+    <groupNode id="OandoModule" idref="OandoModuleId" label="">
+        <!--HMO Request-->
+        <itemNode id="HMO" label="Funeral Support" icon="/images/grid_dot_lg_personinformation.png"
+                  cardIcon="/images/grid_dot_lg_personinformation.png" taskMenuSource="/WEB-INF/taskflow/SearchFuneral_BTF.xml"
+                  securedResourceName="/WEB-INF/taskflow/SearchFuneral_BTF.xml" focusViewId="/Oando"
+                  webApp="Oando" applicationStripe="Oando" showOnHomeGrid="true" rendered="true"/>
+                  </groupNode>
+        <!--HMO Additional Request--> 
+</menu>

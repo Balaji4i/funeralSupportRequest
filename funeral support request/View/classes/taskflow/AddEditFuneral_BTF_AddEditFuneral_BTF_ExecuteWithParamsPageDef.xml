@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="AddEditFuneral_BTF_AddEditFuneral_BTF_ExecuteWithParamsPageDef" Package="taskflow"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="XXSSHR_FUNERAL_SUPPORT_VO" RangeSize="25" DataControl="Oando_AMDataControl"
+              id="XXSSHR_FUNERAL_SUPPORT_VOIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="b_username" NDValue="adf.context.sessionScope.userName" NDType="java.lang.String"/>
+      <NamedData NDName="bv_id" NDValue="#{pageFlowScope.headerId}" NDType="java.math.BigDecimal"/>
+    </action>
+  </bindings>
+</pageDefinition>

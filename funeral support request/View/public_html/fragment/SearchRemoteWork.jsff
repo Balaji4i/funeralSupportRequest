@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+    <af:pageTemplate viewId="/oracle/apps/uikit/common/pageTemplates/MainPageTemplate.jspx" id="pt1">
+        <f:facet name="pageContents">
+            <af:panelGroupLayout id="pgl1" layout="vertical">
+                <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="140" disabled="true">
+                    <f:facet name="first">
+                        <af:panelDashboard id="pd1" styleClass="AFStretchWidth"  rowHeight="90px" columns="5">
+                           
+                            <af:panelBox text="All" id="pb1" showDisclosure="false" styleClass="leftBorderBlack" >
+                                <f:facet name="toolbar"/>
+                                 <af:link text="#{bindings.AllCount.inputValue}" id="l1" inlineStyle="font-size:7mm;color:#80391e;text-align:center;"
+                                         actionListener="#{backingBeanScope.SearchRemoteWork.onClickStatusCount}">
+                                    <af:setPropertyListener from="ALL" to="#{pageFlowScope.statusType}"
+                                                                type="action"/>         
+                                </af:link>
+                            </af:panelBox>
+                            <af:panelBox text="Draft" id="pb6" showDisclosure="false" styleClass="leftBorderBlue">
+                                <f:facet name="toolbar"/>
+                                 <af:link text="#{bindings.DraftCount.inputValue}" id="l7" inlineStyle="font-size:7mm;color:Blue;text-align:center;"
+                                         actionListener="#{backingBeanScope.SearchRemoteWork.onClickStatusCount}">
+                                    <af:setPropertyListener from="DRAFT" to="#{pageFlowScope.statusType}"
+                                                                type="action"/>         
+                                </af:link>
+                            </af:panelBox>
+                            <af:panelBox text="Submitted for Approval" id="pb2" showDisclosure="false" styleClass="leftBorderYellow">
+                                <f:facet name="toolbar"/>
+                                  <af:link text="#{bindings.SubmittedCount.inputValue}" id="l2" inlineStyle="font-size:7mm;color:Orange;text-align:center;"
+                                         actionListener="#{backingBeanScope.SearchRemoteWork.onClickStatusCount}">
+                                <af:setPropertyListener from="SUBMITTED FOR APPROVAL" to="#{pageFlowScope.statusType}"
+                                                                type="action"/>         
+                                </af:link>
+                            </af:panelBox>
+                            <af:panelBox text="Approved" id="pb3" showDisclosure="false" styleClass="leftBorderGreen">
+                                <f:facet name="toolbar"/>
+                                 <af:link text="#{bindings.ApprovedCount.inputValue}" id="l3" inlineStyle="font-size:7mm;color:Green;text-align:center;"
+                                         actionListener="#{backingBeanScope.SearchRemoteWork.onClickStatusCount}">
+                                <af:setPropertyListener from="APPROVED" to="#{pageFlowScope.statusType}"
+                                                                type="action"/>         
+                                </af:link>
+                            </af:panelBox>
+                            <af:panelBox text="Rejected" id="pb4" showDisclosure="false"  styleClass="leftBorderRed">
+                                <f:facet name="toolbar"/>
+                                 <af:link text="#{bindings.RejectedCount.inputValue}" id="l4" inlineStyle="font-size:7mm;color:red;text-align:center;"
+                                         actionListener="#{backingBeanScope.SearchRemoteWork.onClickStatusCount}">
+                                <af:setPropertyListener from="REJECTED" to="#{pageFlowScope.statusType}"
+                                                                type="action"/>         
+                                </af:link>
+                            </af:panelBox>
+                        </af:panelDashboard>
+                    </f:facet>
+                    
+                    <f:facet name="second">
+                        <af:panelBox text="Remote Work Form" id="pb5" showDisclosure="false">
+                            <f:facet name="toolbar"/>
+                            <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar">
+                                      <af:toolbar id="t2" flex="10">
+                                        <af:link text="" id="l5" icon="/images/func_add_16_ena.png" partialSubmit="true"
+                                                 hoverIcon="/images/func_add_16_hov.png"
+                                                 depressedIcon="/images/func_add_16_act.png"
+                                                 disabledIcon="/images/func_add_16_dis.png" action="addEdit">
+                                            <af:setPropertyListener from="#{'add'}" to="#{pageFlowScope.mode}"
+                                                                type="action"/>
+                                        <af:setPropertyListener from="#{null}" to="#{pageFlowScope.headerId}"
+                                                                type="action"/>
+                                        </af:link>
+                            <af:panelGroupLayout layout="vertical" id="pgl2">
+                                    <af:quickQuery id="qryId1" 
+                                              value="#{bindings.searchVCQuery.queryDescriptor}"
+                                              model="#{bindings.searchVCQuery.queryModel}"
+                                              queryListener="#{bindings.searchVCQuery.processQuery}"
+                                              queryOperationListener="#{bindings.searchVCQuery.processQueryOperation}"/>
+                               
+                            </af:panelGroupLayout>
+                              <af:spacer width="10" height="10" id="s3"/>
+                                           <af:button text="Export to Excel" id="b1">
+                                                <af:exportCollectionActionListener type="excelHTML" exportedId="t1"
+                                                                                   filename="Remote Work.xls"
+                                                                                   title="Remote Work(All Rpws)"/>
+                                            </af:button>
+                            </af:toolbar></f:facet>
+                                <f:facet name="statusbar"/>
+                                <af:table value="#{bindings.XXHR_REMOTE_WORK_VO1.collectionModel}" var="row"
+                                          rows="#{bindings.XXHR_REMOTE_WORK_VO1.rangeSize}"
+                                          emptyText="#{bindings.XXHR_REMOTE_WORK_VO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0" scrollPolicy="page"
+                                          selectedRowKeys="#{bindings.XXHR_REMOTE_WORK_VO1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.XXHR_REMOTE_WORK_VO1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.XXHR_REMOTE_WORK_VO1.rangeSize}"
+                                          id="t1">
+                                    <af:column headerText="#{bindings.XXHR_REMOTE_WORK_VO1.hints.RemoteReqNo.label}" 
+                                             frozen="true"   id="c1" width="200">
+                                                <af:link text="#{row.RemoteReqNo}" id="l6"
+                                               partialSubmit="true"
+                                                         actionListener="#{backingBeanScope.SearchRemoteWork.onClickEdit}"
+                                                         action="addEdit">
+                                            <af:setPropertyListener from="#{bindings.RemoteReqId.inputValue}"
+                                                                    to="#{pageFlowScope.headerId}" type="action"/>
+                                            <af:setPropertyListener from="edit" to="#{pageFlowScope.mode}"
+                                                                    type="action"/>
+                                        </af:link>
+                                        <af:outputText value="#{row.RemoteReqNo}" rendered="false"
+                                                       shortDesc="#{bindings.XXHR_REMOTE_WORK_VO1.hints.RemoteReqNo.tooltip}"
+                                                       id="ot1">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.XXHR_REMOTE_WORK_VO1.hints.RemoteReqNo.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.XXHR_REMOTE_WORK_VO1.hints.RequestDate.label}" width="200"
+                                           frozen="true"      id="c2">
+                                        <af:outputText value="#{row.RequestDate}"
+                                                       shortDesc="#{bindings.XXHR_REMOTE_WORK_VO1.hints.RequestDate.tooltip}"
+                                                       id="ot2">
+                                             <af:convertDateTime pattern="dd-MMM-yyyy"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.XXHR_REMOTE_WORK_VO1.hints.StartDate.label}" width="200"
+                                         frozen="true"        id="c3">
+                                        <af:outputText value="#{row.StartDate}"
+                                                       shortDesc="#{bindings.XXHR_REMOTE_WORK_VO1.hints.StartDate.tooltip}"
+                                                       id="ot3">
+                                            <af:convertDateTime pattern="dd-MMM-yyyy"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.XXHR_REMOTE_WORK_VO1.hints.EndDate.label}" width="200"
+                                            frozen="true"     id="c4">
+                                        <af:outputText value="#{row.EndDate}"
+                                                       shortDesc="#{bindings.XXHR_REMOTE_WORK_VO1.hints.EndDate.tooltip}"
+                                                       id="ot4">
+                                            <af:convertDateTime pattern="dd-MMM-yyyy"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.XXHR_REMOTE_WORK_VO1.hints.NoOfDays.label}" width="200"
+                                               frozen="true"  id="c5">
+                                        <af:outputText value="#{row.NoOfDays}"
+                                                       shortDesc="#{bindings.XXHR_REMOTE_WORK_VO1.hints.NoOfDays.tooltip}"
+                                                       id="ot5">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.XXHR_REMOTE_WORK_VO1.hints.NoOfDays.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.XXHR_REMOTE_WORK_VO1.hints.Location.label}" width="200"
+                                               id="c6">
+                                        <af:outputText value="#{row.Location}"
+                                                       shortDesc="#{bindings.XXHR_REMOTE_WORK_VO1.hints.Location.tooltip}"
+                                                       id="ot6"/>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.XXHR_REMOTE_WORK_VO1.hints.ApprovalStatus.label}" width="200"
+                                               id="c7">
+                                        <af:outputText value="#{row.ApprovalStatus}"
+                                                       shortDesc="#{bindings.XXHR_REMOTE_WORK_VO1.hints.ApprovalStatus.tooltip}"
+                                                       id="ot7"/>
+                                    </af:column>
+                                </af:table>
+                            </af:panelCollection>
+                        </af:panelBox>
+                    </f:facet>
+                    
+                </af:panelSplitter>
+            </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="footerStart"/>
+        <f:facet name="footer"/>
+        <f:facet name="footerEnd"/>
+        <f:facet name="startPanel"/>
+        <f:facet name="endPanel"/>
+        <f:facet name="headerStart"/>
+        <f:facet name="header"/>
+        <f:facet name="headerEnd"/>
+    </af:pageTemplate>
+</jsp:root>

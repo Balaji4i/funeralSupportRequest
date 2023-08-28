@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="model.am.Oando_AM">
+    <AppModuleConfig name="Oando_AMLocal" jbo.project="model.Model" ApplicationName="model.am.Oando_AM"
+                     DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/oando"/>
+      <Security AppModuleJndiName="model.am.Oando_AM"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="Oando_AMShared" jbo.project="model.Model" ApplicationName="model.am.Oando_AM"
+                     DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/oando"/>
+      <Security AppModuleJndiName="model.am.Oando_AM"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

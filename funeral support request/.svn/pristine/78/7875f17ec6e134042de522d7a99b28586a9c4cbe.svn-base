@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="SearchRemoteWork_BTF">
+    <default-activity>filterUser</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__3">
+      <managed-bean-name>filmStrip</managed-bean-name>
+      <managed-bean-class>com.view.beans.filmStrip.UtilsBean</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__14">
+      <managed-bean-name>mode</managed-bean-name>
+      <managed-bean-class>java.lang.String</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__15">
+      <managed-bean-name>headerId</managed-bean-name>
+      <managed-bean-class>java.math.BigDecimal</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__18">
+      <managed-bean-name>SearchRemoteWork</managed-bean-name>
+      <managed-bean-class>com.view.beans.SearchRemoteWork</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="SearchRemoteWork">
+      <page>/fragment/SearchRemoteWork.jsff</page>
+    </view>
+    <method-call id="filterUser">
+      <method>#{bindings.filterUser.execute}</method>
+      <outcome>
+        <fixed-outcome>filterUser</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-call id="AddEditRemoteWork_BTF">
+      <task-flow-reference>
+        <document>/WEB-INF/taskflow/AddEditRemoteWork_BTF.xml</document>
+        <id>AddEditRemoteWork_BTF</id>
+      </task-flow-reference>
+      <input-parameter id="__16">
+        <name>mode</name>
+        <value>#{pageFlowScope.mode}</value>
+      </input-parameter>
+      <input-parameter id="__17">
+        <name>headerId</name>
+        <value>#{pageFlowScope.headerId}</value>
+      </input-parameter>
+    </task-flow-call>
+    <method-call id="Execute">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>Execute</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="hide_FS">
+      <method>#{backingBeanScope.filmStrip._hideFilmStrip}</method>
+      <outcome>
+        <fixed-outcome>hide</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="show_FS">
+      <method>#{backingBeanScope.filmStrip._showFilmStrip}</method>
+      <outcome>
+        <fixed-outcome>show</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="Execute1">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>Execute</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>filterUser</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>filterUser</from-outcome>
+        <to-activity-id>SearchRemoteWork</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>SearchRemoteWork</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>addEdit</from-outcome>
+        <to-activity-id>hide_FS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>hide_FS</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>hide</from-outcome>
+        <to-activity-id>AddEditRemoteWork_BTF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>AddEditRemoteWork_BTF</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>Execute</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__10">
+      <from-activity-id>Execute</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome>Execute</from-outcome>
+        <to-activity-id>Execute1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id>show_FS</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome>show</from-outcome>
+        <to-activity-id>filterUser</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__19">
+      <from-activity-id>Execute1</from-activity-id>
+      <control-flow-case id="__20">
+        <from-outcome>Execute</from-outcome>
+        <to-activity-id>show_FS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

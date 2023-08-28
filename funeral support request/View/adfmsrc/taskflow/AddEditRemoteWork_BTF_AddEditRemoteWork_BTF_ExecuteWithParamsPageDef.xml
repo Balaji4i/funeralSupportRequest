@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="AddEditRemoteWork_BTF_AddEditRemoteWork_BTF_ExecuteWithParamsPageDef" Package="taskflow"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="XXHR_REMOTE_WORK_VO1" RangeSize="25" DataControl="Oando_AMDataControl"
+              id="XXHR_REMOTE_WORK_VO1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="BV_ID" NDValue="#{pageFlowScope.headerId}" NDType="java.math.BigDecimal"/>
+    </action>
+  </bindings>
+</pageDefinition>

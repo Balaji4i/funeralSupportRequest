@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="NewDependentPageDef"
+                Package="fragment">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="NewDepHmoHdr_VO" RangeSize="25" DataControl="Oando_AMDataControl" id="NewDepHmoHdr_VOIterator" ChangeEventPolicy="none"/>
+    <iterator Binds="NewDepHmoDtl_VO" RangeSize="25" DataControl="Oando_AMDataControl" id="NewDepHmoDtl_VOIterator" ChangeEventPolicy="none"/>
+    <iterator Binds="XxfndAttachment_EOView" RangeSize="25" DataControl="Oando_AMDataControl" ChangeEventPolicy="none"
+              id="XxfndAttachment_EOViewIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="NewDepHmoHdr_VOIterator" id="ApprovalStatus">
+      <AttrNames>
+        <Item Value="ApprovalStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewDepHmoHdr_VOIterator" id="ApproverComments">
+      <AttrNames>
+        <Item Value="ApproverComments"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewDepHmoHdr_VOIterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewDepHmoHdr_VOIterator" id="CreationDate">
+      <AttrNames>
+        <Item Value="CreationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewDepHmoHdr_VOIterator" id="HmoCategory">
+      <AttrNames>
+        <Item Value="HmoCategory"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewDepHmoHdr_VOIterator" id="HmoHdrId">
+      <AttrNames>
+        <Item Value="HmoHdrId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewDepHmoHdr_VOIterator" id="HmoOption">
+      <AttrNames>
+        <Item Value="HmoOption"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewDepHmoHdr_VOIterator" id="HmoPlanName">
+      <AttrNames>
+        <Item Value="HmoPlanName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewDepHmoHdr_VOIterator" id="HmoPlanTotal">
+      <AttrNames>
+        <Item Value="HmoPlanTotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewDepHmoHdr_VOIterator" id="HmoRequestNo">
+      <AttrNames>
+        <Item Value="HmoRequestNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewDepHmoHdr_VOIterator" id="HmoTransReference">
+      <AttrNames>
+        <Item Value="HmoTransReference"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NewDepHmoHdr_VOIterator" id="HmoType">
+      <AttrNames>
+        <Item Value="HmoType"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="NewDepHmoDtl_VOIterator" id="NewDepHmoDtl_VO">
+      <nodeDefinition DefName="model.vo.XxhrHmoDtl_VO" Name="NewDepHmoDtl_VO0">
+        <AttrNames>
+          <Item Value="StateOfResidence"/>
+          <Item Value="DepAgeCategory"/>
+          <Item Value="DepDob"/>
+          <Item Value="DependentClass"/>
+          <Item Value="DependentCost"/>
+          <Item Value="DependentType"/>
+          <Item Value="DepFirstName"/>
+          <Item Value="DepGender"/>
+          <Item Value="DepLastName"/>
+          <Item Value="DepPhoto"/>
+          <Item Value="DepTitle"/>
+          <Item Value="HmoDtlId"/>
+          <Item Value="Hospital"/>
+          <Item Value="MobileNo"/>
+          <Item Value="ReasonForChange"/>
+          <Item Value="ResiAddress"/>
+          <Item Value="ResidentialAddress"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="NewDepHmoDtl_VOIterator" id="HmoDtlId">
+      <AttrNames>
+        <Item Value="HmoDtlId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="XxfndAttachment_EOViewIterator" id="XxfndAttachment_EOView">
+      <nodeDefinition DefName="model.vo.XxfndAttachment_EOView" Name="XxfndAttachment_EOView0">
+        <AttrNames>
+          <Item Value="AttachmentName"/>
+          <Item Value="AttachmentType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="updateNewApprovedDependent" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="updateNewApprovedDependent" IsViewObjectMethod="false" DataControl="Oando_AMDataControl"
+                  InstanceName="bindings.updateNewApprovedDependent.dataControl.dataProvider"
+                  ReturnName="data.Oando_AMDataControl.methodResults.updateNewApprovedDependent_updateNewApprovedDependent_dataControl_dataProvider_updateNewApprovedDependent_result">
+      <NamedData NDName="hmo_ref_no" NDValue="#{bindings.HmoHdrId.inputValue}" NDType="java.lang.String"/>
+    </methodAction>
+    <action id="Commit" DataControl="Oando_AMDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

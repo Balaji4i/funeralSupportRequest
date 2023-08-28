@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="FilmStripPageDef"
+                Package="pages"  ControllerClass="com.view.filmstrip.FilmStripPhaseListener">
+  <parameters/>
+  <executables>
+      <variableIterator id="variables"/>
+    <taskFlow id="dynamicRegion1"
+              taskFlowId="${backingBeanScope.FilmStripBean.dynamicTaskFlowId}"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding" Refresh="ifNeeded" activation="deferred"/>
+  </executables>
+  <bindings>
+  <methodAction id="getPersonId" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getPersonId"
+                  IsViewObjectMethod="false" DataControl="Oando_AMDataControl"
+                  InstanceName="bindings.getPersonId.dataControl.dataProvider"
+                  ReturnName="data.Oando_AMDataControl.methodResults.getPersonId_getPersonId_dataControl_dataProvider_getPersonId_result">
+      <NamedData NDName="userName" NDValue="#{sessionScope.userName}" NDType="java.lang.String"/>
+    </methodAction>
+    </bindings>
+</pageDefinition>

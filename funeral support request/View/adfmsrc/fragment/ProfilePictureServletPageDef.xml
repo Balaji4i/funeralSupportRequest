@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="ProfilePictureServletPageDef"
+                Package="fragment">
+  <parameters/>
+  <executables>
+    <iterator id="Oando_AMDataControlIter" Binds="Oando_AMDataControl" DataControl="Oando_AMDataControl"
+              RangeSize="25"/>
+  </executables>
+  <bindings>
+    <methodAction id="getCurrentConnection" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getCurrentConnection" IsViewObjectMethod="false" DataControl="Oando_AMDataControl"
+                  InstanceName="bindings.getCurrentConnection.dataControl.dataProvider"
+                  ReturnName="data.Oando_AMDataControl.methodResults.getCurrentConnection_getCurrentConnection_dataControl_dataProvider_getCurrentConnection_result"/>
+  </bindings>
+</pageDefinition>

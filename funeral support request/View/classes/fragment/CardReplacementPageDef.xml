@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="CardReplacementPageDef"
+                Package="fragment">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HMOCard_VO" RangeSize="25" DataControl="Oando_AMDataControl" id="HMOCard_VOIterator" ChangeEventPolicy="none"/>
+    <iterator Binds="XxfndAttachment_EOView" RangeSize="25" DataControl="Oando_AMDataControl" ChangeEventPolicy="none"
+              id="XxfndAttachment_EOViewIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="ApprovalStatus">
+      <AttrNames>
+        <Item Value="ApprovalStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="ApproverComments">
+      <AttrNames>
+        <Item Value="ApproverComments"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="CardReplacementDetail">
+      <AttrNames>
+        <Item Value="CardReplacementDetail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="CardReqNo">
+      <AttrNames>
+        <Item Value="CardReqNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="CreationDate">
+      <AttrNames>
+        <Item Value="CreationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="HmoOption">
+      <AttrNames>
+        <Item Value="HmoOption"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="HmoTransReference">
+      <AttrNames>
+        <Item Value="HmoTransReference"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="MobileNo">
+      <AttrNames>
+        <Item Value="MobileNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="PersonNumber">
+      <AttrNames>
+        <Item Value="PersonNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="XxfndAttachment_EOViewIterator" id="XxfndAttachment_EOView">
+      <nodeDefinition DefName="model.vo.XxfndAttachment_EOView" Name="XxfndAttachment_EOView0">
+        <AttrNames>
+          <Item Value="AttachmentName"/>
+          <Item Value="AttachmentType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="HMOCard_VOIterator" id="CardId">
+      <AttrNames>
+        <Item Value="CardId"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="Oando_AMDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HMOApprovalCount_ROVO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Variable
+    Name="B_pid"
+    Kind="where"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="HMOApprovalCount_ROVO"/>
+  </Variable>
+  <SQLQuery><![CDATA[select                
+(select count(*) from XXSSHR_FUNERAL_SUPPORT where APPROVAL_STATUS in ('SUBMITTED FOR APPROVAL','SUBMITTED FOR PAYROLL','APPROVED','DRAFT','REJECTED','ERROR')and PERSON_ID=:B_pid and DELETE_FLAG = 'N') AS ALL_COUNT,               
+(select count(*) from XXSSHR_FUNERAL_SUPPORT where APPROVAL_STATUS = 'SUBMITTED FOR APPROVAL' and PERSON_ID=:B_pid and DELETE_FLAG = 'N') AS SUBMITTED_COUNT,               
+(select count(*) from XXSSHR_FUNERAL_SUPPORT where APPROVAL_STATUS = 'APPROVED' and PERSON_ID=:B_pid and DELETE_FLAG = 'N') AS APPROVED_COUNT ,              
+(select count(*) from XXSSHR_FUNERAL_SUPPORT where APPROVAL_STATUS = 'REJECTED' and PERSON_ID=:B_pid and DELETE_FLAG = 'N') AS REJECTED_COUNT  ,            
+(select count(*) from XXSSHR_FUNERAL_SUPPORT where APPROVAL_STATUS = 'DRAFT' and PERSON_ID=:B_pid and DELETE_FLAG = 'N') AS DRAFT_COUNT              
+from dual]]></SQLQuery>
+  <ViewAttribute
+    Name="AllCount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ALL_COUNT"
+    Expression="ALL_COUNT"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="SubmittedCount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="SUBMITTED_COUNT"
+    Expression="SUBMITTED_COUNT"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ApprovedCount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="APPROVED_COUNT"
+    Expression="APPROVED_COUNT"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="RejectedCount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="REJECTED_COUNT"
+    Expression="REJECTED_COUNT"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="DraftCount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="DRAFT_COUNT"
+    Expression="DRAFT_COUNT"
+    SQLType="NUMERIC"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="AllCount"/>
+  </AttrArray>
+</ViewObject>

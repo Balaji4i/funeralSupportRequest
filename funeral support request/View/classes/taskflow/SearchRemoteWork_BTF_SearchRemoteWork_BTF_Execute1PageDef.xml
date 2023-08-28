@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="SearchRemoteWork_BTF_SearchRemoteWork_BTF_Execute1PageDef" Package="taskflow" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="HMOApprovalCount_ROVO" RangeSize="25" DataControl="Oando_AMDataControl"
+              id="HMOApprovalCount_ROVOIterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="HMOApprovalCount_ROVOIterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

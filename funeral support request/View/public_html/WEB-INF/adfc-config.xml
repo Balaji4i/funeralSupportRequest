@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+<view id="FilmStrip">
+    <page>/pages/FilmStrip.jspx</page>
+    <bookmark id="__74">
+    </bookmark>
+  </view>
+  <view id="Invalid">
+    <page>/pages/Invalid.jspx</page>
+    <bookmark>
+      <url-parameter id="__1">
+        <name>errorType</name>
+        <value>#{pageFlowScope.errorType}</value>
+      </url-parameter>
+    </bookmark>
+  </view>
+ <managed-bean id="__312">
+    <managed-bean-name id="__212">SessionState</managed-bean-name>
+    <managed-bean-class id="__412">com.view.beans.filmStrip.SessionState</managed-bean-class>
+    <managed-bean-scope id="__112">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__712">
+    <managed-bean-name id="__612">UtilsBean</managed-bean-name>
+    <managed-bean-class id="__812">com.view.beans.filmStrip.UtilsBean</managed-bean-class>
+    <managed-bean-scope id="__512">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__1912">
+    <managed-bean-name id="__2120">FilmStripBean</managed-bean-name>
+    <managed-bean-class id="__2122">com.view.filmstrip.FilmStripBean</managed-bean-class>
+    <managed-bean-scope id="__2121">backingBean</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

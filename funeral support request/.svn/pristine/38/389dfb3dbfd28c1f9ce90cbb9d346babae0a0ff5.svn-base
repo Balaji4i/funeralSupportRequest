@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="ManageHMOPageDef"
+                Package="fragment">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="XxhrHmoTrxHdr_EOView" RangeSize="25" DataControl="Oando_AMDataControl"
+              id="XxhrHmoTrxHdr_EOViewIterator"/>
+    <iterator Binds="XxhrHmoTrxDtl_EOView" RangeSize="25" DataControl="Oando_AMDataControl"
+              id="XxhrHmoTrxDtl_EOViewIterator"/>
+    <iterator id="XxfndAttachment_EOViewIterator" Binds="XxfndAttachment_EOView" DataControl="Oando_AMDataControl"
+              RangeSize="25"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="HmoRequestDate">
+      <AttrNames>
+        <Item Value="HmoRequestDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="XxhrHmoTrxHdr_EOViewIterator" StaticList="false" Uses="LOV_HmoType" id="HmoType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="XxhrHmoTrxHdr_EOViewIterator" StaticList="false" Uses="LOV_HmoMasterHdrId" id="HmoMasterHdrId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="XxhrHmoTrxHdr_EOViewIterator" StaticList="false" Uses="LOV_Category" id="HmoCategory"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="XxhrHmoTrxHdr_EOViewIterator" StaticList="false" Uses="LOV_HmoOption1" id="HmoOption"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="HmoPlanTotal">
+      <AttrNames>
+        <Item Value="HmoPlanTotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="HmoAcceptanceFlag">
+      <AttrNames>
+        <Item Value="HmoAcceptanceFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="CreationDate">
+      <AttrNames>
+        <Item Value="CreationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="LastUpdatedBy">
+      <AttrNames>
+        <Item Value="LastUpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="LastUpdateDate">
+      <AttrNames>
+        <Item Value="LastUpdateDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="XxhrHmoTrxHdr_EOViewIterator" StaticList="false" Uses="LOV_AddiCategory" id="AddiCategory"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="EmpName_Trans">
+      <AttrNames>
+        <Item Value="EmpName_Trans"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="HmoHeaderRowStatus">
+      <AttrNames>
+        <Item Value="HmoHeaderRowStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="Email_Trans">
+      <AttrNames>
+        <Item Value="Email_Trans"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="Gender">
+      <AttrNames>
+        <Item Value="Gender"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="Hospital">
+      <AttrNames>
+        <Item Value="Hospital"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="StateOfResidence">
+      <AttrNames>
+        <Item Value="StateOfResidence"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="ApprovalStatus">
+      <AttrNames>
+        <Item Value="ApprovalStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="ApproverComments">
+      <AttrNames>
+        <Item Value="ApproverComments"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="HmoTrxHdrId">
+      <AttrNames>
+        <Item Value="HmoTrxHdrId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="XxhrHmoTrxDtl_EOViewIterator" id="XxhrHmoTrxDtl_EOView">
+      <nodeDefinition DefName="model.vo.XxhrHmoTrxDtl_EOView" Name="XxhrHmoTrxDtl_EOView0">
+        <AttrNames>
+          <Item Value="HmoTrxDtlId"/>
+          <Item Value="DependentType"/>
+          <Item Value="DependentClass"/>
+          <Item Value="DepDob"/>
+          <Item Value="DepGender"/>
+          <Item Value="DepTitle"/>
+          <Item Value="DepAgeCategory"/>
+          <Item Value="DepFirstName"/>
+          <Item Value="DepLastName"/>
+          <Item Value="ResiAddress"/>
+          <Item Value="MobileNo"/>
+          <Item Value="MaritalStatus"/>
+          <Item Value="ResidentialAddress"/>
+          <Item Value="StateOfResidence"/>
+          <Item Value="Hospital"/>
+          <Item Value="DependentCost"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="HmoRequestNo">
+      <AttrNames>
+        <Item Value="HmoRequestNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="Trans_EligibleCost">
+      <AttrNames>
+        <Item Value="Trans_EligibleCost"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxhrHmoTrxHdr_EOViewIterator" id="HmoPlanDeduction">
+      <AttrNames>
+        <Item Value="HmoPlanDeduction"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="XxfndAttachment_EOViewIterator" id="XxfndAttachment_EOView">
+      <nodeDefinition DefName="model.vo.XxfndAttachment_EOView" Name="XxfndAttachment_EOView0">
+        <AttrNames>
+          <Item Value="AttachmentName"/>
+          <Item Value="AttachmentType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" DataControl="Oando_AMDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

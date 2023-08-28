@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="SearchAdditionalRequests">
+    <default-activity>SearchAdditionalRequest</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>SearchAdditionalRequest</managed-bean-name>
+      <managed-bean-class>com.view.beans.SearchAdditionalRequest</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__7">
+      <managed-bean-name>FilmStripBB</managed-bean-name>
+      <managed-bean-class>com.view.beans.filmStrip.UtilsBean</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="SearchAdditionalRequest">
+      <page>/fragment/SearchAdditionalRequest.jsff</page>
+    </view>
+    <task-flow-call id="MedicalDetails_BTF">
+      <task-flow-reference>
+        <document>/WEB-INF/taskflow/MedicalDetails_BTF.xml</document>
+        <id>MedicalDetails_BTF</id>
+      </task-flow-reference>
+      <input-parameter id="__2">
+        <name>RequestEditID</name>
+        <value>#{pageFlowScope.RequestEditID}</value>
+      </input-parameter>
+    </task-flow-call>
+    <method-call id="hideFS1">
+      <method>#{backingBeanScope.FilmStripBB._hideFilmStrip}</method>
+      <outcome>
+        <fixed-outcome>hide1</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-call id="Complaints_BTF">
+      <task-flow-reference>
+        <document>/WEB-INF/taskflow/Complaints_BTF.xml</document>
+        <id>Complaints_BTF</id>
+      </task-flow-reference>
+      <input-parameter id="__8">
+        <name>RequestEditID</name>
+        <value>#{pageFlowScope.RequestEditID}</value>
+      </input-parameter>
+    </task-flow-call>
+    <method-call id="hideFS2">
+      <method>#{backingBeanScope.FilmStripBB._hideFilmStrip}</method>
+      <outcome>
+        <fixed-outcome>hide2</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="hideFS3">
+      <method>#{backingBeanScope.FilmStripBB._hideFilmStrip}</method>
+      <outcome>
+        <fixed-outcome>hide3</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="hideFS4">
+      <method>#{backingBeanScope.FilmStripBB._hideFilmStrip}</method>
+      <outcome>
+        <fixed-outcome>hide4</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="hideFS5">
+      <method>#{backingBeanScope.FilmStripBB._hideFilmStrip}</method>
+      <outcome>
+        <fixed-outcome>hide5</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-call id="CardReplacement_BTF">
+      <task-flow-reference>
+        <document>/WEB-INF/taskflow/CardReplacement_BTF.xml</document>
+        <id>CardReplacement_BTF</id>
+      </task-flow-reference>
+      <input-parameter id="__14">
+        <name>RequestEditID</name>
+        <value>#{pageFlowScope.RequestEditID}</value>
+      </input-parameter>
+    </task-flow-call>
+    <task-flow-call id="ReimbursementClaim_BTF">
+      <task-flow-reference>
+        <document>/WEB-INF/taskflow/ReimbursementClaim_BTF.xml</document>
+        <id>ReimbursementClaim_BTF</id>
+      </task-flow-reference>
+      <input-parameter id="__19">
+        <name>RequestEditID</name>
+        <value>#{pageFlowScope.RequestEditID}</value>
+      </input-parameter>
+    </task-flow-call>
+    <method-call id="showFS">
+      <method>#{backingBeanScope.FilmStripBB._showFilmStrip}</method>
+      <outcome>
+        <fixed-outcome>show</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExecuteTable">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>Execute</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExecuteCount">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>Execute</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-call id="NewDependent_BTF">
+      <task-flow-reference>
+        <document>/WEB-INF/taskflow/NewDependent_BTF.xml</document>
+        <id>NewDependent_BTF</id>
+      </task-flow-reference>
+      <input-parameter id="__39">
+        <name>RequestEditID</name>
+        <value>#{pageFlowScope.RequestEditID}</value>
+      </input-parameter>
+    </task-flow-call>
+    <control-flow-rule id="__3">
+      <from-activity-id>SearchAdditionalRequest</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>toMedical</from-outcome>
+        <to-activity-id>hideFS1</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__9">
+        <from-outcome>toComplaint</from-outcome>
+        <to-activity-id>hideFS2</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__15">
+        <from-outcome>toCard</from-outcome>
+        <to-activity-id>hideFS3</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__16">
+        <from-outcome>toReimbursement</from-outcome>
+        <to-activity-id>hideFS4</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__34">
+        <from-outcome>toNewDep</from-outcome>
+        <to-activity-id>hideFS5</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>hideFS1</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>hide1</from-outcome>
+        <to-activity-id>MedicalDetails_BTF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__10">
+      <from-activity-id>hideFS2</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome>hide2</from-outcome>
+        <to-activity-id>Complaints_BTF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id>hideFS3</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome>hide3</from-outcome>
+        <to-activity-id>CardReplacement_BTF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__17">
+      <from-activity-id>hideFS4</from-activity-id>
+      <control-flow-case id="__18">
+        <from-outcome>hide4</from-outcome>
+        <to-activity-id>ReimbursementClaim_BTF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__20">
+      <from-activity-id>showFS</from-activity-id>
+      <control-flow-case id="__21">
+        <from-outcome>show</from-outcome>
+        <to-activity-id>ExecuteTable</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__22">
+      <from-activity-id>MedicalDetails_BTF</from-activity-id>
+      <control-flow-case id="__23">
+        <from-outcome>toSearch</from-outcome>
+        <to-activity-id>showFS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__24">
+      <from-activity-id>ExecuteTable</from-activity-id>
+      <control-flow-case id="__25">
+        <from-outcome>Execute</from-outcome>
+        <to-activity-id>ExecuteCount</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__26">
+      <from-activity-id>ExecuteCount</from-activity-id>
+      <control-flow-case id="__27">
+        <from-outcome>Execute</from-outcome>
+        <to-activity-id>SearchAdditionalRequest</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__28">
+      <from-activity-id>Complaints_BTF</from-activity-id>
+      <control-flow-case id="__29">
+        <from-outcome>toSearch</from-outcome>
+        <to-activity-id>showFS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__30">
+      <from-activity-id>CardReplacement_BTF</from-activity-id>
+      <control-flow-case id="__31">
+        <from-outcome>toSearch</from-outcome>
+        <to-activity-id>showFS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__32">
+      <from-activity-id>ReimbursementClaim_BTF</from-activity-id>
+      <control-flow-case id="__33">
+        <from-outcome>toSearch</from-outcome>
+        <to-activity-id>showFS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__35">
+      <from-activity-id>hideFS5</from-activity-id>
+      <control-flow-case id="__36">
+        <from-outcome>hide5</from-outcome>
+        <to-activity-id>NewDependent_BTF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__37">
+      <from-activity-id>NewDependent_BTF</from-activity-id>
+      <control-flow-case id="__38">
+        <from-outcome>toSearch</from-outcome>
+        <to-activity-id>showFS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

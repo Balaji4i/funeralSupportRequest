@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Users_ROVO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Variable
+    Name="pUsername"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <SQLQuery><![CDATA[SELECT  
+    XXPER_USERS.USER_ID USER_ID,  
+    XXPER_USERS.ACTIVE_FLAG ACTIVE_FLAG,  
+    XXPER_USERS.START_DATE START_DATE,  
+    XXPER_USERS.END_DATE END_DATE,  
+    XXPER_USERS.USER_GUID USER_GUID,  
+    XXPER_USERS.USERNAME USERNAME,  
+    XXPER_USERS.PERSON_ID PERSON_ID,  
+    XXPER_USERS.PARTY_ID PARTY_ID,  
+    XXPER_USERS.OBJECT_VERSION_NUMBER OBJECT_VERSION_NUMBER  
+FROM  
+    XXPER_USERS]]></SQLQuery>
+  <ViewAttribute
+    Name="UserId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="USER_ID"
+    Expression="USER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ActiveFlag"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="120"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ACTIVE_FLAG"
+    Expression="ACTIVE_FLAG"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="120"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StartDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="START_DATE"
+    Expression="START_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="EndDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="END_DATE"
+    Expression="END_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="UserGuid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="256"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="USER_GUID"
+    Expression="USER_GUID"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="256"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Username"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="400"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="USERNAME"
+    Expression="USERNAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="400"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PersonId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PERSON_ID"
+    Expression="PERSON_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="PartyId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PARTY_ID"
+    Expression="PARTY_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ObjectVersionNumber"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="OBJECT_VERSION_NUMBER"
+    Expression="OBJECT_VERSION_NUMBER"
+    SQLType="NUMERIC"/>
+  <ViewCriteria
+    Name="getPersonIdCriteria"
+    ViewObjectName="model.ro.Users_ROVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="Users_ROVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Username"
+        ViewAttribute="Username"
+        Operator="="
+        Conjunction="AND"
+        Value=":pUsername"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="UserId"/>
+  </AttrArray>
+</ViewObject>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="SearchHMO_BTF">
+    <default-activity>SearchHMO</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>FilmStripBean</managed-bean-name>
+      <managed-bean-class>com.view.beans.filmStrip.UtilsBean</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__11">
+      <managed-bean-name>SearchHmoBB</managed-bean-name>
+      <managed-bean-class>com.view.beans.SearchHmoBB</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="SearchHMO">
+      <page>/fragment/SearchHMO.jsff</page>
+    </view>
+    <task-flow-call id="ManageHMO_BTF">
+      <task-flow-reference>
+        <document>/WEB-INF/taskflow/ManageHMO_BTF.xml</document>
+        <id>ManageHMO_BTF</id>
+      </task-flow-reference>
+      <input-parameter id="__10">
+        <name>hmoTrxHdrID</name>
+        <value>#{pageFlowScope.hmoTrxHdrID}</value>
+      </input-parameter>
+    </task-flow-call>
+    <method-call id="hideFS">
+      <method>#{backingBeanScope.FilmStripBean._hideFilmStrip}</method>
+      <outcome>
+        <fixed-outcome>hideStrip</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="showFS">
+      <method>#{backingBeanScope.FilmStripBean._showFilmStrip}</method>
+      <outcome>
+        <fixed-outcome>toSearch</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__2">
+      <from-activity-id>SearchHMO</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>toManage</from-outcome>
+        <to-activity-id>hideFS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>hideFS</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>hideStrip</from-outcome>
+        <to-activity-id>ManageHMO_BTF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>ManageHMO_BTF</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>backTooSearch</from-outcome>
+        <to-activity-id>showFS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>showFS</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>toSearch</from-outcome>
+        <to-activity-id>SearchHMO</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

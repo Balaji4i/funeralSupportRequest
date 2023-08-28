@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="XxfndAttachment_EO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="XXFND_ATTACHMENT"
+  AliasName="XxfndAttachment_EO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="AttachmentId"
+    ColumnName="ATTACHMENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="XXFND_ATTACHMENT"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+ 
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="AttachmentName"
+    Precision="60"
+    ColumnName="ATTACHMENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XXFND_ATTACHMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SourceDocument"
+    Precision="30"
+    ColumnName="SOURCE_DOCUMENT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XXFND_ATTACHMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SourceDocumentId"
+    ColumnName="SOURCE_DOCUMENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XXFND_ATTACHMENT"/>
+  <Attribute
+    Name="AttachmentType"
+    Precision="60"
+    ColumnName="ATTACHMENT_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XXFND_ATTACHMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attachment"
+    IsQueriable="false"
+    ColumnName="ATTACHMENT"
+    SQLType="BLOB"
+    Type="oracle.jbo.domain.BlobDomain"
+    ColumnType="BLOB"
+    TableName="XXFND_ATTACHMENT"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="60"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XXFND_ATTACHMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    ColumnName="CREATION_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="XXFND_ATTACHMENT"/>
+  <Attribute
+    Name="LastUpdatedBy"
+    Precision="60"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XXFND_ATTACHMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    ColumnName="LAST_UPDATE_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="XXFND_ATTACHMENT"/>
+  <Attribute
+    Name="LastUpdateLogin"
+    Precision="150"
+    ColumnName="LAST_UPDATE_LOGIN"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XXFND_ATTACHMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+
+  <AccessorAttribute
+    Name="XXHR_REMOTE_WORK_EO"
+    Association="model.association.Remote_Assoc"
+    AssociationEnd="model.association.Remote_Assoc.XXHR_REMOTE_WORK_EO"
+    AssociationOtherEnd="model.association.Remote_Assoc.XxfndAttachment_EO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="XXSSHR_FUNERAL_SUPPORT_EO"
+    Association="model.association.Funeral_Assoc"
+    AssociationEnd="model.association.Funeral_Assoc.XXSSHR_FUNERAL_SUPPORT_EO"
+    AssociationOtherEnd="model.association.Funeral_Assoc.XxfndAttachment_EO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="XxfndattachmentEoPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="XXFNDATTACHMENT_EO_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.XxfndAttachment_EO.AttachmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_XxfndAttachment_EO">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="UK_XXHR_HMO_TRX_DTL_EO"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_XXFND_ATTACHMENT_EO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.XxfndAttachment_EO.SourceDocumentId"/>
+      <Item Value="model.eo.XxfndAttachment_EO.SourceDocument"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_XxfndAttachment_EO1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XXHR_REMOTE_WORK_EO_PRIMARY_KE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_XXFND_ATTACHMENT_EO1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.XxfndAttachment_EO.SourceDocumentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_XxfndAttachment_EO2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="UK_XXHR_REMOTE_WORK_EO"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_XXFND_ATTACHMENT_EO2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.XxfndAttachment_EO.SourceDocumentId"/>
+      <Item Value="model.eo.XxfndAttachment_EO.SourceDocument"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_XxfndAttachment_EO3">
+    <DesignTime>
+      <Attr Name="_isCascadeDelete" Value="true"/>
+      <Attr Name="_referencedKey" Value="UK_XXHR_REMOTE_WORK_EO"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_XXFND_ATTACHMENT_EO3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.XxfndAttachment_EO.SourceDocumentId"/>
+      <Item Value="model.eo.XxfndAttachment_EO.SourceDocument"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_XxfndAttachment_EO4">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="UK_XXHR_REMOTE_WORK_EO"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_XXFND_ATTACHMENT_EO4"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.XxfndAttachment_EO.SourceDocumentId"/>
+      <Item Value="model.eo.XxfndAttachment_EO.SourceDocument"/>
+    </AttrArray>
+  </Key>
+</Entity>

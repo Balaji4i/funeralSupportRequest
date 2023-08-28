@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Remote_Assoc"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="XXHR_REMOTE_WORK_EO"
+    Cardinality="1"
+    Source="true"
+    Owner="model.eo.XXHR_REMOTE_WORK_EO"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="XXHR_REMOTE_WORK_EO"/>
+      <Attr Name="_foreignKey" Value="model.eo.XXHR_REMOTE_WORK_EO.uk_XXHR_REMOTE_WORK_EO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.XXHR_REMOTE_WORK_EO.RemoteReqId"/>
+      <Item Value="model.eo.XXHR_REMOTE_WORK_EO.RequestType"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="XxfndAttachment_EO"
+    Cardinality="-1"
+    Owner="model.eo.XxfndAttachment_EO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="XxfndAttachment_EO"/>
+      <Attr Name="_foreignKey" Value="model.eo.XxfndAttachment_EO.fk_XxfndAttachment_EO4"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.XxfndAttachment_EO.SourceDocumentId"/>
+      <Item Value="model.eo.XxfndAttachment_EO.SourceDocument"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

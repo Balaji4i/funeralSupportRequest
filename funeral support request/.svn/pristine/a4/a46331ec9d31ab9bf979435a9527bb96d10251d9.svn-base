@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="AddEditRemoteWorkPageDef"
+                Package="fragment">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="XXHR_REMOTE_WORK_VO1" RangeSize="25" DataControl="Oando_AMDataControl" ChangeEventPolicy="none"
+     id="XXHR_REMOTE_WORK_VO1Iterator"/>
+    <iterator Binds="XxfndAttachment_EOView1" RangeSize="25" DataControl="Oando_AMDataControl" 
+              id="XxfndAttachment_EOView1Iterator"/>
+    <iterator id="HolidayList_ROVOIterator" Binds="HolidayList_ROVO" DataControl="Oando_AMDataControl" 
+   RangeSize="25"/>
+    <iterator id="HMOApprovalCount_ROVOIterator" Binds="HMOApprovalCount_ROVO" DataControl="Oando_AMDataControl"
+              RangeSize="25"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="RemoteReqNo">
+      <AttrNames>
+        <Item Value="RemoteReqNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="RequestDate">
+      <AttrNames>
+        <Item Value="RequestDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="ApprovalStatus"  >
+      <AttrNames>
+        <Item Value="ApprovalStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="PersonNumber">
+      <AttrNames>
+        <Item Value="PersonNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="FullName">
+      <AttrNames>
+        <Item Value="FullName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="BusinessUnitName">
+      <AttrNames>
+        <Item Value="BusinessUnitName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="Cadre">
+      <AttrNames>
+        <Item Value="Cadre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="NoOfDays">
+      <AttrNames>
+        <Item Value="NoOfDays"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="Comments">
+      <AttrNames>
+        <Item Value="Comments"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="Oando_AMDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="Oando_AMDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <tree IterBinding="XxfndAttachment_EOView1Iterator" id="XxfndAttachment_EOView11">
+      <nodeDefinition DefName="model.vo.XxfndAttachment_EOView" Name="XxfndAttachment_EOView110">
+        <AttrNames>
+          <Item Value="AttachmentName"/>
+          <Item Value="AttachmentType"/>
+          <Item Value="Attachment"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="XxfndAttachment_EOView1Iterator" id="Attachment">
+      <AttrNames>
+        <Item Value="Attachment"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="XxfndAttachment_EOView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="XxfndAttachment_EOView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="RequestType">
+      <AttrNames>
+        <Item Value="RequestType"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="XXHR_REMOTE_WORK_VO1Iterator" StaticList="false" Uses="LOV_Location" id="Location1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <listOfValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" StaticList="false" Uses="LOV_Countries" id="Countries1"/>
+    <button IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="DisclaimerFlag" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="DisclaimerFlag"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="Y"/>
+        <Item Value="N"/>
+      </ValueList>
+    </button>
+    <attributeValues IterBinding="XXHR_REMOTE_WORK_VO1Iterator" id="RemoteReqId">
+      <AttrNames>
+        <Item Value="RemoteReqId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

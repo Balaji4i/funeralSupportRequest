@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="Complaints_BTF_Complaints_BTF_ExecuteWithParamsPageDef" Package="taskflow" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="HMOComplaint_VO" RangeSize="25" DataControl="Oando_AMDataControl" id="HMOComplaint_VOIterator"
+              Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="HMOComplaint_VOIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="BV_COMPLAINT_ID" NDValue="#{pageFlowScope.RequestEditID}" NDType="java.math.BigDecimal"/>
+    </action>
+  </bindings>
+</pageDefinition>

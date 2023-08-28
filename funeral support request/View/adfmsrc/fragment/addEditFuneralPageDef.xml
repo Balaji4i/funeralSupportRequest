@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="addEditFuneralPageDef"
+                Package="fragment">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="XXSSHR_FUNERAL_SUPPORT_VO" RangeSize="25" DataControl="Oando_AMDataControl"
+              id="XXSSHR_FUNERAL_SUPPORT_VOIterator"/>
+    <iterator Binds="XxfndAttachment_EOView2" RangeSize="25" DataControl="Oando_AMDataControl"
+              id="XxfndAttachment_EOView2Iterator"/>
+    <iterator id="HMOApprovalCount_ROVOIterator" Binds="HMOApprovalCount_ROVO" DataControl="Oando_AMDataControl"
+              RangeSize="25"/>
+    <iterator id="XXSSHR_FUNERAL_SUPPORT_VO_RefIterator" Binds="XXSSHR_FUNERAL_SUPPORT_VO_Ref"
+              DataControl="Oando_AMDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="FuneralReqNo">
+      <AttrNames>
+        <Item Value="FuneralReqNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="RequestDate">
+      <AttrNames>
+        <Item Value="RequestDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="ApprovalStatus">
+      <AttrNames>
+        <Item Value="ApprovalStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="RequestType">
+      <AttrNames>
+        <Item Value="RequestType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="PersonNumber">
+      <AttrNames>
+        <Item Value="PersonNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="Cadre">
+      <AttrNames>
+        <Item Value="Cadre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="FullName">
+      <AttrNames>
+        <Item Value="FullName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="DeleteFlag">
+      <AttrNames>
+        <Item Value="DeleteFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="BusinessUnitName">
+      <AttrNames>
+        <Item Value="BusinessUnitName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="Comments">
+      <AttrNames>
+        <Item Value="Comments"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="XxfndAttachment_EOView2Iterator" id="XxfndAttachment_EOView2">
+      <nodeDefinition DefName="model.vo.XxfndAttachment_EOView" Name="XxfndAttachment_EOView20">
+        <AttrNames>
+          <Item Value="AttachmentId"/>
+          <Item Value="AttachmentName"/>
+          <Item Value="SourceDocument"/>
+          <Item Value="SourceDocumentId"/>
+          <Item Value="AttachmentType"/>
+          <Item Value="Attachment"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="XxfndAttachment_EOView2Iterator" id="Delete"
+            InstanceName="Oando_AMDataControl.XxfndAttachment_EOView2" DataControl="Oando_AMDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="XxfndAttachment_EOView2Iterator" id="CreateInsert"
+            InstanceName="Oando_AMDataControl.XxfndAttachment_EOView2" DataControl="Oando_AMDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" DataControl="Oando_AMDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="Oando_AMDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="EntitlementAmount">
+      <AttrNames>
+        <Item Value="EntitlementAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" StaticList="false" Uses="LOV_DependentType"
+          id="DependentType" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="FuneralReqId">
+      <AttrNames>
+        <Item Value="FuneralReqId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XXSSHR_FUNERAL_SUPPORT_VOIterator" id="AssignmentNumber">
+      <AttrNames>
+        <Item Value="AssignmentNumber"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
